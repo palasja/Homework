@@ -1,0 +1,12 @@
+S:\C#\Homework\Task4_2\bin\Debug\netcoreapp3.1\Task4_2.exe
+S:\C#\Homework\Task4_2\bin\Debug\netcoreapp3.1\Task4_2.deps.json
+S:\C#\Homework\Task4_2\bin\Debug\netcoreapp3.1\Task4_2.runtimeconfig.json
+S:\C#\Homework\Task4_2\bin\Debug\netcoreapp3.1\Task4_2.runtimeconfig.dev.json
+S:\C#\Homework\Task4_2\bin\Debug\netcoreapp3.1\Task4_2.dll
+S:\C#\Homework\Task4_2\bin\Debug\netcoreapp3.1\Task4_2.pdb
+S:\C#\Homework\Task4_2\obj\Debug\netcoreapp3.1\Task4_2.AssemblyInfoInputs.cache
+S:\C#\Homework\Task4_2\obj\Debug\netcoreapp3.1\Task4_2.AssemblyInfo.cs
+S:\C#\Homework\Task4_2\obj\Debug\netcoreapp3.1\Task4_2.csproj.CoreCompileInputs.cache
+S:\C#\Homework\Task4_2\obj\Debug\netcoreapp3.1\Task4_2.dll
+S:\C#\Homework\Task4_2\obj\Debug\netcoreapp3.1\Task4_2.pdb
+S:\C#\Homework\Task4_2\obj\Debug\netcoreapp3.1\Task4_2.genruntimeconfig.cache
