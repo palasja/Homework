@@ -6,14 +6,11 @@ namespace Task4_3
     {
         static void Main(string[] args)
         {
-            Mouse mouse = new Mouse();
             Cat cat = new Cat();
-            Human human = new Human();
-            Dog dog = new Dog();
 
-            cat.WakeUpEvent += mouse.SeeCat;
-            cat.WakeUpEvent += human.SeeCat;
-            cat.WakeUpEvent += dog.SeeCat;
+            Mouse mouse = new Mouse(cat);
+            Human human = new Human(cat);
+            Dog dog = new Dog(cat);
 
             cat.WakeUp();
         }

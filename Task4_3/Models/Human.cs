@@ -6,9 +6,9 @@ namespace Task4_3
 {
     class Human
     {
-        public void SeeCat()
+        public Human(Cat cat)
         {
-            Console.WriteLine($"{this.GetType()} : Oh? this my cat");
+            cat.WakeUpEvent += () => Console.WriteLine($"{this.GetType()} : Kitty!!!");
         }
     }
 }

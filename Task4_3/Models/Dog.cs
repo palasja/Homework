@@ -6,9 +6,9 @@ namespace Task4_3
 {
     class Dog
     {
-        public void SeeCat()
+        public Dog(Cat cat)
         {
-            Console.WriteLine($"{ this.GetType()} : Auf!!! Auf!!!");
+            cat.WakeUpEvent += () => Console.WriteLine($"{ this.GetType()} : Auf!!! Auf!!!");
         }
     }
 }

@@ -6,9 +6,12 @@ namespace Task4_3
 {
     class Mouse
     {
-        public void SeeCat()
+        Cat cat;
+
+        public Mouse(Cat cat)
         {
-            Console.WriteLine($"{ this.GetType()} : Try to run");
+            cat.WakeUpEvent += () => Console.WriteLine($"{ this.GetType()} : Try to run");
         }
+
     }
 }
