@@ -8,7 +8,7 @@ namespace Task4_3
     {
         public Human(Cat cat)
         {
-            cat.WakeUpEvent += () => Console.WriteLine($"{this.GetType()} : Kitty!!!");
+            /*cat.WakeUpEvent += () => Console.WriteLine($"{this.GetType()} : Kitty!!!");*/
         }
     }
 }
