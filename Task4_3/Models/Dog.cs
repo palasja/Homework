@@ -8,7 +8,7 @@ namespace Task4_3
     {
         public Dog(Cat cat)
         {
-            cat.WakeUpEvent += () => Console.WriteLine($"{ this.GetType()} : Auf!!! Auf!!!");
+            /*cat.WakeUpEvent += () => Console.WriteLine($"{ this.GetType()} : Auf!!! Auf!!!");*/
         }
     }
 }

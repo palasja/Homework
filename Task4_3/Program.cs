@@ -11,7 +11,7 @@ namespace Task4_3
             Mouse mouse = new Mouse(cat);
             Human human = new Human(cat);
             Dog dog = new Dog(cat);
-
+            
             cat.WakeUp();
         }
     }

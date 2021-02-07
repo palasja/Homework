@@ -10,7 +10,7 @@ namespace Task4_3
 
         public Mouse(Cat cat)
         {
-            cat.WakeUpEvent += () => Console.WriteLine($"{ this.GetType()} : Try to run");
+            /*cat.WakeUpEvent += () => Console.WriteLine($"{ this.GetType()} : Try to run");*/
         }
 
     }

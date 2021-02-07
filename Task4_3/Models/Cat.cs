@@ -12,7 +12,7 @@ namespace Task4_3
 
         public void WakeUp() 
         {
-            WakeUpEvent();
+            WakeUpEvent?.Invoke();
         }
     }
 }
