@@ -50,7 +50,7 @@
               "target": "Package",
               "version": "[5.0.3, )"
             },
-            "System.Configuration.ConfigurationManager": {
+            "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[5.0.0, )"
             }

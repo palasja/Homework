@@ -1,0 +1,13 @@
+S:\C#\Homework\Task6_1\bin\Release\netcoreapp3.1\Task6_1.exe
+S:\C#\Homework\Task6_1\bin\Release\netcoreapp3.1\Task6_1.deps.json
+S:\C#\Homework\Task6_1\bin\Release\netcoreapp3.1\Task6_1.runtimeconfig.json
+S:\C#\Homework\Task6_1\bin\Release\netcoreapp3.1\Task6_1.runtimeconfig.dev.json
+S:\C#\Homework\Task6_1\bin\Release\netcoreapp3.1\Task6_1.dll
+S:\C#\Homework\Task6_1\bin\Release\netcoreapp3.1\Task6_1.pdb
+S:\C#\Homework\Task6_1\obj\Release\netcoreapp3.1\Task6_1.csprojAssemblyReference.cache
+S:\C#\Homework\Task6_1\obj\Release\netcoreapp3.1\Task6_1.AssemblyInfoInputs.cache
+S:\C#\Homework\Task6_1\obj\Release\netcoreapp3.1\Task6_1.AssemblyInfo.cs
+S:\C#\Homework\Task6_1\obj\Release\netcoreapp3.1\Task6_1.csproj.CoreCompileInputs.cache
+S:\C#\Homework\Task6_1\obj\Release\netcoreapp3.1\Task6_1.dll
+S:\C#\Homework\Task6_1\obj\Release\netcoreapp3.1\Task6_1.pdb
+S:\C#\Homework\Task6_1\obj\Release\netcoreapp3.1\Task6_1.genruntimeconfig.cache

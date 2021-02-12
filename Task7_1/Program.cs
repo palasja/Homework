@@ -16,6 +16,10 @@ namespace Task7_1
             }
 
             context.SaveChanges();
+
+            foreach (var c in context.Books)
+                Console.WriteLine($"Id: {c.Id},  \tName: {c.Name}  " +
+                    $"\tAuthor: {c.Author} ");
         }
     }
 }

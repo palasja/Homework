@@ -1,0 +1,13 @@
+S:\C#\Homework\Task4_3\bin\Release\netcoreapp3.1\Task4_3.exe
+S:\C#\Homework\Task4_3\bin\Release\netcoreapp3.1\Task4_3.deps.json
+S:\C#\Homework\Task4_3\bin\Release\netcoreapp3.1\Task4_3.runtimeconfig.json
+S:\C#\Homework\Task4_3\bin\Release\netcoreapp3.1\Task4_3.runtimeconfig.dev.json
+S:\C#\Homework\Task4_3\bin\Release\netcoreapp3.1\Task4_3.dll
+S:\C#\Homework\Task4_3\bin\Release\netcoreapp3.1\Task4_3.pdb
+S:\C#\Homework\Task4_3\obj\Release\netcoreapp3.1\Task4_3.csprojAssemblyReference.cache
+S:\C#\Homework\Task4_3\obj\Release\netcoreapp3.1\Task4_3.AssemblyInfoInputs.cache
+S:\C#\Homework\Task4_3\obj\Release\netcoreapp3.1\Task4_3.AssemblyInfo.cs
+S:\C#\Homework\Task4_3\obj\Release\netcoreapp3.1\Task4_3.csproj.CoreCompileInputs.cache
+S:\C#\Homework\Task4_3\obj\Release\netcoreapp3.1\Task4_3.dll
+S:\C#\Homework\Task4_3\obj\Release\netcoreapp3.1\Task4_3.pdb
+S:\C#\Homework\Task4_3\obj\Release\netcoreapp3.1\Task4_3.genruntimeconfig.cache

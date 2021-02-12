@@ -1,0 +1,5 @@
+{
+	"ConnectionStrings": {
+		"BloggingDatabase": "Server=DESKTOP-D4T5739\\SQLEXPRESS;Initial Catalog=Task7;Integrated Security=SSPI;"
+	}
+}

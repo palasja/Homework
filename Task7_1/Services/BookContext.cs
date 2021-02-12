@@ -1,7 +1,7 @@
-﻿
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
-using System.Configuration;
+using System.IO;
 
 namespace Task7_1
 {
@@ -11,7 +11,10 @@ namespace Task7_1
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-D4T5739\\SQLEXPRESS;Initial Catalog=Task7;Integrated Security=SSPI;");
+
+            var config = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appconfig.json").Build();
+
+            optionsBuilder.UseSqlServer(config.GetConnectionString("BloggingDatabase"));
         }
     }
 }
