@@ -4,10 +4,10 @@ S:\C#\Homework\Task2_2\bin\Debug\netcoreapp3.1\Task2_2.runtimeconfig.json
 S:\C#\Homework\Task2_2\bin\Debug\netcoreapp3.1\Task2_2.runtimeconfig.dev.json
 S:\C#\Homework\Task2_2\bin\Debug\netcoreapp3.1\Task2_2.dll
 S:\C#\Homework\Task2_2\bin\Debug\netcoreapp3.1\Task2_2.pdb
-S:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.csprojAssemblyReference.cache
 S:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.AssemblyInfoInputs.cache
 S:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.AssemblyInfo.cs
 S:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.csproj.CoreCompileInputs.cache
 S:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.dll
 S:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.pdb
 S:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.genruntimeconfig.cache
+S:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.csprojAssemblyReference.cache

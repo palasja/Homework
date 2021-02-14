@@ -7,19 +7,21 @@ namespace Task7_1
     {
         static void Main(string[] args)
         {
-            var context = new BookContext();
-            var books = BookServices.GetBooks();
-
-            foreach (var book in books)
+            using (var context = new BookContext())
             {
-                context.Add(book);
+                var books = BookServices.GetBooks();
+
+                foreach (var book in books)
+                {
+                    context.Add(book);
+                }
+
+                context.SaveChanges();
+
+                foreach (var c in context.Books)
+                    Console.WriteLine($"Id: {c.Id},  \tName: {c.Name} \tAuthor: {c.Author} ");
             }
-
-            context.SaveChanges();
-
-            foreach (var c in context.Books)
-                Console.WriteLine($"Id: {c.Id},  \tName: {c.Name}  " +
-                    $"\tAuthor: {c.Author} ");
+            
         }
     }
 }

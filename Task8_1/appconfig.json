@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "ConnectionStrings": "Server=DESKTOP-D4T5739\\SQLEXPRESS;Initial Catalog=Task8;Integrated Security=SSPI;"
+  }
+}
