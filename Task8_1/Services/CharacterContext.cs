@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Task8_1.Services
 {
-    class CharacterContext : DbContext
+    public class CharacterContext : DbContext
     {
         public DbSet<Character> Characters { get; set; }
         public DbSet<Story> Stories{ get; set; }
@@ -25,12 +25,12 @@ namespace Task8_1.Services
             modelBuilder.Entity<Author>().HasData(
                  new Author[]
             {
-                new Author { Id=1, Name="Masashu Kishimito", StoryId=1},
-                new Author { Id=2, Name="Sui Isida", StoryId=2},
-                new Author { Id=3, Name="Yanai Takumi", StoryId=3},
-                new Author { Id=4, Name="George Lucas", StoryId=4},
-                new Author { Id=5, Name="George R.R. Tolkien", StoryId=5},
-                new Author { Id=6, Name="Joanne Rowling", StoryId=6}
+                new Author { Id=1, Name="Masashu Kishimito"},
+                new Author { Id=2, Name="Sui Isida"},
+                new Author { Id=3, Name="Yanai Takumi"},
+                new Author { Id=4, Name="George Lucas"},
+                new Author { Id=5, Name="George R.R. Tolkien"},
+                new Author { Id=6, Name="Joanne Rowling"}
             });
         }
     }

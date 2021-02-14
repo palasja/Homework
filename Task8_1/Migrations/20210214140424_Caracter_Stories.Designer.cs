@@ -9,8 +9,8 @@ using Task8_1.Services;
 namespace Task8_1.Migrations
 {
     [DbContext(typeof(CharacterContext))]
-    [Migration("20210213195906_Add Char Story")]
-    partial class AddCharStory
+    [Migration("20210214140424_Caracter_Stories")]
+    partial class Caracter_Stories
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

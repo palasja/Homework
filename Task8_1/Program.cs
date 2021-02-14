@@ -9,27 +9,29 @@ namespace Task8_1
     {
         static void Main(string[] args)
         {
-            var context = new CharacterContext();
-            /*            context.Stories.AddRange(StoriesRepository.GetStories());
-                        context.SaveChanges();
-                        context.Characters.AddRange(CharactersRepository.GetCharacters());
-                        context.SaveChanges();*/
-
-
-            var characters = context.Characters.Include(c => c.Story).Where(s => s.Id == context.).ToList();
-            var Authors = context.Author.Include(s => s.Story).ToList();
-
-
-            foreach (var character in characters)
+            using (var context = new CharacterContext())
             {
-                Console.WriteLine($"{character.FirstName} {character.LastName}\t {character.Story?.Name}\t {character.Story.Authors.Name}");
+                /*                context.Stories.AddRange(StoriesRepository.GetStories());
+                                context.SaveChanges();
+                                context.Characters.AddRange(CharactersRepository.GetCharacters());
+                                context.SaveChanges();*/
+
+                StoriesRepository.InsertAuthor(context);
+                context.SaveChanges();
+
+                var characters = context.Characters.Include(c => c.Story).ThenInclude(s => s.Author).ToList();
+
+
+                foreach (var character in characters)
+                {
+                    Console.WriteLine($"" +
+                        $"{character.FirstName} {character.LastName}\t " +
+                        $"{character.Story.Name}\t "+ 
+                        $"{character.Story.Author.Name}");
+                }
+
             }
 
-            foreach (var author in Authors)
-            {
-                
-                Console.WriteLine($"{author.Name} {author.Story.Name}\t {author.Story?.Characters.Fir}\t {character.Story.Authors.ToString()}");
-            }
         }
     }
 }

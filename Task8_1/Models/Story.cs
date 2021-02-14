@@ -12,7 +12,9 @@ namespace Task8_1.Models
 
         public List<Character> Characters { get; set; }
 
-        public List<Author> Authors { get; set; }
+        public int? AuthorId { get; set; }
+        public Author Author { get; set; }
+
 
     }
 }

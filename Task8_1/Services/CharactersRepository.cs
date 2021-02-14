@@ -1,5 +1,6 @@
 ﻿using Task8_1.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Task8_1
 {
@@ -16,10 +17,13 @@ namespace Task8_1
             characters.Add(new Character() { FirstName = "Yōji ", LastName = "Itami", Gender = true, Age = 37, StoryId = 3 });
             characters.Add(new Character() { FirstName = "Anakin", LastName = "Skywalker", Gender = true, Age = 29, StoryId = 4 });
             characters.Add(new Character() { FirstName = "Frodo", LastName = "Begins", Gender = true, Age = 47, StoryId = 5 });
-            characters.Add(new Character() { FirstName = "Bulba", LastName = "Bagins", Gender = true, Age = 100, StoryId = 5 });
-            characters.Add(new Character() { FirstName = "Harry", LastName = "Potter", Gender = true, Age = 17, StoryId = 6 });
+            characters.Add(new Character() { FirstName = "Bulba", LastName = "Bagins", Gender = true, Age = 100, StoryId = 6 });
+            characters.Add(new Character() { FirstName = "Harry", LastName = "Potter", Gender = true, Age = 17, StoryId = 7 });
+            characters.Add(new Character() { FirstName = "Newt", LastName = "Scamander", Gender = true, Age = 24, StoryId = 8 });
+            
 
             return characters;
         }
+
     }
 }

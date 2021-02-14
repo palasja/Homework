@@ -2,7 +2,7 @@
 
 namespace Task8_1.Migrations
 {
-    public partial class AddCharStory : Migration
+    public partial class Caracter_Stories : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
