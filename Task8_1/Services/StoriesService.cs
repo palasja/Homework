@@ -5,7 +5,7 @@ using Task8_1.Services;
 
 namespace Task8_1
 {
-    public static class StoriesRepository
+    public static class StoriesService
     {
         public static IEnumerable<Story> GetStories()
         {

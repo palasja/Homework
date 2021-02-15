@@ -16,7 +16,7 @@ namespace Task8_1
                                 context.Characters.AddRange(CharactersRepository.GetCharacters());
                                 context.SaveChanges();*/
 
-                StoriesRepository.InsertAuthor(context);
+                StoriesService.InsertAuthor(context);
                 context.SaveChanges();
 
                 var characters = context.Characters.Include(c => c.Story).ThenInclude(s => s.Author).ToList();
@@ -25,8 +25,8 @@ namespace Task8_1
                 foreach (var character in characters)
                 {
                     Console.WriteLine($"" +
-                        $"{character.FirstName} {character.LastName}\t " +
-                        $"{character.Story.Name}\t "+ 
+                        $"{character.FirstName} {character.LastName}\n\t " +
+                        $"{character.Story.Name}\n\t\t " + 
                         $"{character.Story.Author.Name}");
                 }
 

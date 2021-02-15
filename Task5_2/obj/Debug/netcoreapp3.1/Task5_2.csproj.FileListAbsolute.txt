@@ -10,3 +10,4 @@ S:\C#\Homework\Task5_2\obj\Debug\netcoreapp3.1\Task5_2.csproj.CoreCompileInputs.
 S:\C#\Homework\Task5_2\obj\Debug\netcoreapp3.1\Task5_2.dll
 S:\C#\Homework\Task5_2\obj\Debug\netcoreapp3.1\Task5_2.pdb
 S:\C#\Homework\Task5_2\obj\Debug\netcoreapp3.1\Task5_2.genruntimeconfig.cache
+S:\C#\Homework\Task5_2\obj\Debug\netcoreapp3.1\Task5_2.csprojAssemblyReference.cache
