@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "S:\\C#\\Homework\\Task2_1\\Task2_1.csproj": {}
+    "D:\\C#\\Homework\\Task2_1\\Task2_1.csproj": {}
   },
   "projects": {
-    "S:\\C#\\Homework\\Task2_1\\Task2_1.csproj": {
+    "D:\\C#\\Homework\\Task2_1\\Task2_1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "S:\\C#\\Homework\\Task2_1\\Task2_1.csproj",
+        "projectUniqueName": "D:\\C#\\Homework\\Task2_1\\Task2_1.csproj",
         "projectName": "Task2_1",
-        "projectPath": "S:\\C#\\Homework\\Task2_1\\Task2_1.csproj",
-        "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
-        "outputPath": "S:\\C#\\Homework\\Task2_1\\obj\\",
+        "projectPath": "D:\\C#\\Homework\\Task2_1\\Task2_1.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\C#\\Homework\\Task2_1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Home\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,12 +49,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.11, 3.1.11]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

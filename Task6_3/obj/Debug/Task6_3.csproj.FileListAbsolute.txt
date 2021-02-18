@@ -5,3 +5,10 @@ S:\C#\Homework\Task6_3\obj\Debug\Task6_3.csprojAssemblyReference.cache
 S:\C#\Homework\Task6_3\obj\Debug\Task6_3.csproj.CoreCompileInputs.cache
 S:\C#\Homework\Task6_3\obj\Debug\`.exe
 S:\C#\Homework\Task6_3\obj\Debug\`.pdb
+D:\C#\Homework\Task6_3\bin\Debug\`.exe.config
+D:\C#\Homework\Task6_3\bin\Debug\`.exe
+D:\C#\Homework\Task6_3\bin\Debug\`.pdb
+D:\C#\Homework\Task6_3\obj\Debug\Task6_3.csprojAssemblyReference.cache
+D:\C#\Homework\Task6_3\obj\Debug\Task6_3.csproj.CoreCompileInputs.cache
+D:\C#\Homework\Task6_3\obj\Debug\`.exe
+D:\C#\Homework\Task6_3\obj\Debug\`.pdb

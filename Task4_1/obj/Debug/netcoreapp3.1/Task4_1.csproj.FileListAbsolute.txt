@@ -11,3 +11,16 @@ S:\C#\Homework\Task4_1\obj\Debug\netcoreapp3.1\Task4_1.dll
 S:\C#\Homework\Task4_1\obj\Debug\netcoreapp3.1\Task4_1.pdb
 S:\C#\Homework\Task4_1\obj\Debug\netcoreapp3.1\Task4_1.genruntimeconfig.cache
 S:\C#\Homework\Task4_1\obj\Debug\netcoreapp3.1\Task4_1.csprojAssemblyReference.cache
+D:\C#\Homework\Task4_1\bin\Debug\netcoreapp3.1\Task4_1.exe
+D:\C#\Homework\Task4_1\bin\Debug\netcoreapp3.1\Task4_1.deps.json
+D:\C#\Homework\Task4_1\bin\Debug\netcoreapp3.1\Task4_1.runtimeconfig.json
+D:\C#\Homework\Task4_1\bin\Debug\netcoreapp3.1\Task4_1.runtimeconfig.dev.json
+D:\C#\Homework\Task4_1\bin\Debug\netcoreapp3.1\Task4_1.dll
+D:\C#\Homework\Task4_1\bin\Debug\netcoreapp3.1\Task4_1.pdb
+D:\C#\Homework\Task4_1\obj\Debug\netcoreapp3.1\Task4_1.csprojAssemblyReference.cache
+D:\C#\Homework\Task4_1\obj\Debug\netcoreapp3.1\Task4_1.AssemblyInfoInputs.cache
+D:\C#\Homework\Task4_1\obj\Debug\netcoreapp3.1\Task4_1.AssemblyInfo.cs
+D:\C#\Homework\Task4_1\obj\Debug\netcoreapp3.1\Task4_1.csproj.CoreCompileInputs.cache
+D:\C#\Homework\Task4_1\obj\Debug\netcoreapp3.1\Task4_1.dll
+D:\C#\Homework\Task4_1\obj\Debug\netcoreapp3.1\Task4_1.pdb
+D:\C#\Homework\Task4_1\obj\Debug\netcoreapp3.1\Task4_1.genruntimeconfig.cache
