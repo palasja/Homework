@@ -11,3 +11,16 @@ S:\C#\Homework\Task4_3\obj\Debug\netcoreapp3.1\Task4_3.dll
 S:\C#\Homework\Task4_3\obj\Debug\netcoreapp3.1\Task4_3.pdb
 S:\C#\Homework\Task4_3\obj\Debug\netcoreapp3.1\Task4_3.genruntimeconfig.cache
 S:\C#\Homework\Task4_3\obj\Debug\netcoreapp3.1\Task4_3.csprojAssemblyReference.cache
+D:\C#\Homework\Task4_3\bin\Debug\netcoreapp3.1\Task4_3.exe
+D:\C#\Homework\Task4_3\bin\Debug\netcoreapp3.1\Task4_3.deps.json
+D:\C#\Homework\Task4_3\bin\Debug\netcoreapp3.1\Task4_3.runtimeconfig.json
+D:\C#\Homework\Task4_3\bin\Debug\netcoreapp3.1\Task4_3.runtimeconfig.dev.json
+D:\C#\Homework\Task4_3\bin\Debug\netcoreapp3.1\Task4_3.dll
+D:\C#\Homework\Task4_3\bin\Debug\netcoreapp3.1\Task4_3.pdb
+D:\C#\Homework\Task4_3\obj\Debug\netcoreapp3.1\Task4_3.csprojAssemblyReference.cache
+D:\C#\Homework\Task4_3\obj\Debug\netcoreapp3.1\Task4_3.AssemblyInfoInputs.cache
+D:\C#\Homework\Task4_3\obj\Debug\netcoreapp3.1\Task4_3.AssemblyInfo.cs
+D:\C#\Homework\Task4_3\obj\Debug\netcoreapp3.1\Task4_3.csproj.CoreCompileInputs.cache
+D:\C#\Homework\Task4_3\obj\Debug\netcoreapp3.1\Task4_3.dll
+D:\C#\Homework\Task4_3\obj\Debug\netcoreapp3.1\Task4_3.pdb
+D:\C#\Homework\Task4_3\obj\Debug\netcoreapp3.1\Task4_3.genruntimeconfig.cache

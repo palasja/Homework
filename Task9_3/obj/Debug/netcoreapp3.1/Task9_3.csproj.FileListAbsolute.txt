@@ -1,0 +1,13 @@
+D:\C#\Homework\Task9_3\bin\Debug\netcoreapp3.1\Task9_3.exe
+D:\C#\Homework\Task9_3\bin\Debug\netcoreapp3.1\Task9_3.deps.json
+D:\C#\Homework\Task9_3\bin\Debug\netcoreapp3.1\Task9_3.runtimeconfig.json
+D:\C#\Homework\Task9_3\bin\Debug\netcoreapp3.1\Task9_3.runtimeconfig.dev.json
+D:\C#\Homework\Task9_3\bin\Debug\netcoreapp3.1\Task9_3.dll
+D:\C#\Homework\Task9_3\bin\Debug\netcoreapp3.1\Task9_3.pdb
+D:\C#\Homework\Task9_3\obj\Debug\netcoreapp3.1\Task9_3.csprojAssemblyReference.cache
+D:\C#\Homework\Task9_3\obj\Debug\netcoreapp3.1\Task9_3.AssemblyInfoInputs.cache
+D:\C#\Homework\Task9_3\obj\Debug\netcoreapp3.1\Task9_3.AssemblyInfo.cs
+D:\C#\Homework\Task9_3\obj\Debug\netcoreapp3.1\Task9_3.csproj.CoreCompileInputs.cache
+D:\C#\Homework\Task9_3\obj\Debug\netcoreapp3.1\Task9_3.dll
+D:\C#\Homework\Task9_3\obj\Debug\netcoreapp3.1\Task9_3.pdb
+D:\C#\Homework\Task9_3\obj\Debug\netcoreapp3.1\Task9_3.genruntimeconfig.cache

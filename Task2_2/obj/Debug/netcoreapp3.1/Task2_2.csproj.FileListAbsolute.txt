@@ -11,3 +11,16 @@ S:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.dll
 S:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.pdb
 S:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.genruntimeconfig.cache
 S:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.csprojAssemblyReference.cache
+D:\C#\Homework\Task2_2\bin\Debug\netcoreapp3.1\Task2_2.exe
+D:\C#\Homework\Task2_2\bin\Debug\netcoreapp3.1\Task2_2.deps.json
+D:\C#\Homework\Task2_2\bin\Debug\netcoreapp3.1\Task2_2.runtimeconfig.json
+D:\C#\Homework\Task2_2\bin\Debug\netcoreapp3.1\Task2_2.runtimeconfig.dev.json
+D:\C#\Homework\Task2_2\bin\Debug\netcoreapp3.1\Task2_2.dll
+D:\C#\Homework\Task2_2\bin\Debug\netcoreapp3.1\Task2_2.pdb
+D:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.csprojAssemblyReference.cache
+D:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.AssemblyInfoInputs.cache
+D:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.AssemblyInfo.cs
+D:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.csproj.CoreCompileInputs.cache
+D:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.dll
+D:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.pdb
+D:\C#\Homework\Task2_2\obj\Debug\netcoreapp3.1\Task2_2.genruntimeconfig.cache
