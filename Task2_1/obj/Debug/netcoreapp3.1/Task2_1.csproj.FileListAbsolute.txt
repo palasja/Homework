@@ -17,7 +17,6 @@ D:\C#\Homework\Task2_1\bin\Debug\netcoreapp3.1\Task2_1.runtimeconfig.json
 D:\C#\Homework\Task2_1\bin\Debug\netcoreapp3.1\Task2_1.runtimeconfig.dev.json
 D:\C#\Homework\Task2_1\bin\Debug\netcoreapp3.1\Task2_1.dll
 D:\C#\Homework\Task2_1\bin\Debug\netcoreapp3.1\Task2_1.pdb
-D:\C#\Homework\Task2_1\obj\Debug\netcoreapp3.1\Task2_1.csprojAssemblyReference.cache
 D:\C#\Homework\Task2_1\obj\Debug\netcoreapp3.1\Task2_1.AssemblyInfoInputs.cache
 D:\C#\Homework\Task2_1\obj\Debug\netcoreapp3.1\Task2_1.AssemblyInfo.cs
 D:\C#\Homework\Task2_1\obj\Debug\netcoreapp3.1\Task2_1.csproj.CoreCompileInputs.cache

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Task10_1dll\Task10_1dll.csproj" />
+    <ProjectReference Include="..\Task10_2dll\Task10_2dll.csproj" />
+    <ProjectReference Include="..\Task10_3dll\Task10_3dll.csproj" />
+    <ProjectReference Include="..\Task10_4dll\Task10_4dll.csproj" />
+  </ItemGroup>
+
+</Project>
