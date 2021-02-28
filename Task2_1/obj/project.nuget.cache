@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Phxg6ptVGjTxh7Oo6cDl+L3IspqxyXaa4TpWawgbnAH07wCT0E7ypoCVc94zjkvICW+sYP43jstdrKlo6Y9HxQ==",
+  "dgSpecHash": "JcDnXXRRXJ6DpZtJCONGGXXbOF7vtlOnJHvdDZlAlitXH7ck1gIc+Bi6p9wC7fAubprsolDQylZjNML+F+KZmw==",
   "success": true,
-  "projectFilePath": "D:\\C#\\Homework\\Task2_1\\Task2_1.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "S:\\C#\\Homework\\Task2_1\\Task2_1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Home\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.11\\microsoft.netcore.app.host.win-x64.3.1.11.nupkg.sha512"
+  ],
   "logs": []
 }

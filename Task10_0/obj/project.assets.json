@@ -84,19 +84,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
+    "C:\\Users\\Home\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\Homework\\Task10_0\\Task10_0.csproj",
+      "projectUniqueName": "S:\\C#\\Homework\\Task10_0\\Task10_0.csproj",
       "projectName": "Task10_0",
-      "projectPath": "D:\\C#\\Homework\\Task10_0\\Task10_0.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\Homework\\Task10_0\\obj\\",
+      "projectPath": "S:\\C#\\Homework\\Task10_0\\Task10_0.csproj",
+      "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
+      "outputPath": "S:\\C#\\Homework\\Task10_0\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Home\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -110,17 +110,17 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\C#\\Homework\\Task10_1dll\\Task10_1dll.csproj": {
-              "projectPath": "D:\\C#\\Homework\\Task10_1dll\\Task10_1dll.csproj"
+            "S:\\C#\\Homework\\Task10_1dll\\Task10_1dll.csproj": {
+              "projectPath": "S:\\C#\\Homework\\Task10_1dll\\Task10_1dll.csproj"
             },
-            "D:\\C#\\Homework\\Task10_2dll\\Task10_2dll.csproj": {
-              "projectPath": "D:\\C#\\Homework\\Task10_2dll\\Task10_2dll.csproj"
+            "S:\\C#\\Homework\\Task10_2dll\\Task10_2dll.csproj": {
+              "projectPath": "S:\\C#\\Homework\\Task10_2dll\\Task10_2dll.csproj"
             },
-            "D:\\C#\\Homework\\Task10_3dll\\Task10_3dll.csproj": {
-              "projectPath": "D:\\C#\\Homework\\Task10_3dll\\Task10_3dll.csproj"
+            "S:\\C#\\Homework\\Task10_3dll\\Task10_3dll.csproj": {
+              "projectPath": "S:\\C#\\Homework\\Task10_3dll\\Task10_3dll.csproj"
             },
-            "D:\\C#\\Homework\\Task10_4dll\\Task10_4dll.csproj": {
-              "projectPath": "D:\\C#\\Homework\\Task10_4dll\\Task10_4dll.csproj"
+            "S:\\C#\\Homework\\Task10_4dll\\Task10_4dll.csproj": {
+              "projectPath": "S:\\C#\\Homework\\Task10_4dll\\Task10_4dll.csproj"
             }
           }
         }
@@ -144,12 +144,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.11, 3.1.11]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

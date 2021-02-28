@@ -28,4 +28,11 @@ namespace Task11_3
             mutex.ReleaseMutex();
         }
     }
+        //Не придумал как проверять что отрабатывает только 1 экземпляр. В Test проверять проще
+/*        static void Main(string[] args)
+        {
+            mutex.WaitOne();
+            Console.WriteLine($"App Run");
+            mutex.ReleaseMutex();
+        }*/
 }

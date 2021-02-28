@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Task11_2
 {
@@ -9,28 +11,41 @@ namespace Task11_2
         Test11_2 test = new Test11_2();
         public void Call123()
         {
-            test.First();
-            test.Second();
-            test.Third();
+            Thread thread1 = new Thread(test.First);
+            Thread thread2 = new Thread(test.Second);
+            Thread thread3 = new Thread(test.Third);
+            thread1.Start();
+            thread2.Start();
+            thread3.Start();
 
         }
         public void Call213()
         {
-            test.Second();
-            test.First();
-            test.Third();
+            Thread thread1 = new Thread(test.First);
+            Thread thread2 = new Thread(test.Second);
+            Thread thread3 = new Thread(test.Third);
+            thread2.Start();
+            thread1.Start();
+            thread3.Start();
         }
         public void Call231()
         {
-            test.Second();
-            test.Third();
-            test.First();
+            Thread thread1 = new Thread(test.First);
+            Thread thread2 = new Thread(test.Second);
+            Thread thread3 = new Thread(test.Third);
+            thread2.Start();
+            thread3.Start();
+            thread1.Start();
         }
         public void Call321()
         {
-            test.Third();
-            test.Second();
-            test.First();
+            Thread thread1 = new Thread(test.First);
+            Thread thread2 = new Thread(test.Second);
+            Thread thread3 = new Thread(test.Third);
+            thread3.Start();
+            thread2.Start();
+            thread1.Start();
+
         }
     }
 }

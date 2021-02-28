@@ -9,10 +9,10 @@ namespace Task11_2
         {
             var caller = new Caller();
 
-            caller.Call123();
+            //caller.Call123();
             caller.Call213();
-            caller.Call231();
-            caller.Call321();
+            //caller.Call231();
+            //caller.Call321();
 
             Console.Read();
         }
