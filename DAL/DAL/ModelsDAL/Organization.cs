@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DAL.ModelsDAL
 {
-    class Organization
+    public class Organization
     {
         public int Id { get; set; }
         [Required]

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DAL.ModelsDAL.Serivces
 {
-    class ServiceHardware : IService
+    public class ServiceHardware : IService
     {
         public int Id { get; set; }
         [DefaultValue(0)]

@@ -7683,11 +7683,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\DAL\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\C#\\Task12\\DAL\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Users\\Lenovo\\source\\repos\\DAL\\DAL\\DAL.csproj",
+      "projectPath": "D:\\C#\\Task12\\DAL\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lenovo\\source\\repos\\DAL\\DAL\\obj\\",
+      "outputPath": "D:\\C#\\Task12\\DAL\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",

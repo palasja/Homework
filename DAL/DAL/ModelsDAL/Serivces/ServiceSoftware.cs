@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DAL.ModelsDAL.Serivces
 {
-    class ServiceSoftware : IService
+    public class ServiceSoftware : IService
     {
         public int Id { get; set; }
         [Required]

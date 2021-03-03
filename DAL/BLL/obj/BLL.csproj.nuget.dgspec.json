@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\Task12\\DAL\\DAL\\DAL.csproj": {}
+    "D:\\C#\\Task12\\DAL\\BLL\\BLL.csproj": {}
   },
   "projects": {
-    "D:\\C#\\Task12\\DAL\\DAL\\DAL.csproj": {
+    "D:\\C#\\Task12\\DAL\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\Task12\\DAL\\DAL\\DAL.csproj",
-        "projectName": "DAL",
-        "projectPath": "D:\\C#\\Task12\\DAL\\DAL\\DAL.csproj",
+        "projectUniqueName": "D:\\C#\\Task12\\DAL\\BLL\\BLL.csproj",
+        "projectName": "BLL",
+        "projectPath": "D:\\C#\\Task12\\DAL\\BLL\\BLL.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\Task12\\DAL\\DAL\\obj\\",
+        "outputPath": "D:\\C#\\Task12\\DAL\\BLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,30 +39,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.Proxies": {
-              "target": "Package",
-              "version": "[5.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[5.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[5.0.3, )"
-            },
-            "Microsoft.Extensions.Configuration.Json": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

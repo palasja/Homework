@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DAL.ModelsDAL
 {
-    class Contract
+    public class Contract
     {
         public int Id { get; set; }
         public string Number{ get; set; }

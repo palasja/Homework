@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m564HrYxqUH1Jr2pQmXaEavrLBJYHwNT1q4FUYglA0+hC7g/3SX7+kqJPgtbvD6DQO/eYwPb8Enq+xXHiYmr7A==",
+  "dgSpecHash": "xL2wBEBGD89FihidaJGmbEx8GNICxaWsQMQB1CCilpXnT6R7GArt3aHa2OC4c7s3maRkqPhw+9n9XvzUmupS6Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\DAL\\DAL\\DAL.csproj",
+  "projectFilePath": "D:\\C#\\Task12\\DAL\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

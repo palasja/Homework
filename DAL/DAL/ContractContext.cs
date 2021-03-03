@@ -10,7 +10,7 @@ using System.Text;
 
 namespace DAL
 {
-    class ContractContext : DbContext
+    public class ContractContext : DbContext
     {
         public DbSet<Contract> Contracts { get; set; }
         public DbSet<Person> People { get; set; }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.ModelsDAL
 {
-    class Person
+    public class Person
     {
         public int Id { get; set; }
         [Required]
