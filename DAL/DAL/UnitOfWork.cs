@@ -1,11 +1,12 @@
-﻿using DAL.Repositories;
+﻿using DAL.Interfaces;
+using DAL.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DAL
 {
-    public class UnitOfWork : IDisposable
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private ContractContext db = new ContractContext();
 
@@ -73,17 +74,15 @@ namespace DAL
                 return serviceInfoRepository;
             }
         }
-        public AreaRepository Areas
+        public ServiceSoftwareRepository ServiceSoftware
         {
             get
             {
-                if (areaRepository == null)
-                    areaRepository = new AreaRepository(db);
-                return areaRepository;
+                if (serviceSoftwareRepository == null)
+                    serviceSoftwareRepository = new ServiceSoftwareRepository(db);
+                return serviceSoftwareRepository;
             }
         }
-    }
-    }
 
         public void Save()
         {

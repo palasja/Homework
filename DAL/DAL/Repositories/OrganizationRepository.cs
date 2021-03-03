@@ -8,38 +8,39 @@ using System.Text;
 namespace DAL.Repositories
 {
     public class OrganizationRepository : IRepository<Organization>
-    { 
-    ContractContext db;
-
-    public OrganizationRepository(ContractContext db)
     {
-        this.db = db;
-    }
+        ContractContext db;
 
-    public IEnumerable<Organization> GetAll()
-    {
-        return db.Organizations;
-    }
+        public OrganizationRepository(ContractContext db)
+        {
+            this.db = db;
+        }
 
-    public Organization Get(int id)
-    {
-        return db.Organizations.Find(id);
-    }
+        public IEnumerable<Organization> GetAll()
+        {
+            return db.Organizations;
+        }
 
-    public void Create(Organization organization)
-    {
-        db.Organizations.Add(organization);
-    }
+        public Organization Get(int id)
+        {
+            return db.Organizations.Find(id);
+        }
 
-    public void Update(Organization organization)
-    {
-        db.Entry(organization).State = EntityState.Modified;
-    }
+        public void Create(Organization organization)
+        {
+            db.Organizations.Add(organization);
+        }
 
-    public void Delete(int id)
-    {
-        Organization organization = db.Organizations.Find(id);
-        if (organization != null)
-            db.Organizations.Remove(organization);
+        public void Update(Organization organization)
+        {
+            db.Entry(organization).State = EntityState.Modified;
+        }
+
+        public void Delete(int id)
+        {
+            Organization organization = db.Organizations.Find(id);
+            if (organization != null)
+                db.Organizations.Remove(organization);
+        }
     }
 }
