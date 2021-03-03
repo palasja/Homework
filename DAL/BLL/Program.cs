@@ -1,12 +1,20 @@
-﻿using System;
+﻿using DAL;
+using DAL.Interfaces;
+using System;
+using System.Collections.Generic;
 
 namespace BLL
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            IUnitOfWork uof = new UnitOfWork();
+            var area = uof.Areas.GetAll();
+            foreach (var item in area)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }

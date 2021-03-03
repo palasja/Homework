@@ -1,4 +1,6 @@
 ﻿using DAL.Interfaces;
+using DAL.ModelsDAL;
+using DAL.ModelsDAL.Serivces;
 using DAL.Repositories;
 using System;
 using System.Collections.Generic;
@@ -19,7 +21,7 @@ namespace DAL
         private ServiceSoftwareRepository serviceSoftwareRepository;
 
 
-        public AreaRepository Areas
+        public IRepository<Area> Areas
         {
             get
             {
@@ -29,7 +31,7 @@ namespace DAL
             }
         }
 
-        public ContractRepository Contracts
+        public IRepository<Contract> Contracts
         {
             get
             {
@@ -38,7 +40,7 @@ namespace DAL
                 return contractRepository;
             }
         }
-        public OrganizationRepository Organizations
+        public IRepository<Organization> Organizations
         {
             get
             {
@@ -47,7 +49,7 @@ namespace DAL
                 return organizationRepository;
             }
         }
-        public PersonRepository People
+        public IRepository<Person> People
         {
             get
             {
@@ -56,7 +58,7 @@ namespace DAL
                 return personRepository;
             }
         }
-        public ServiceHardwareRepository ServiceHardware
+        public IRepository<ServiceHardware> ServiceHardware
         {
             get
             {
@@ -65,7 +67,7 @@ namespace DAL
                 return serviceHardwareRepository;
             }
         }
-        public ServiceInfoRepository ServiceInfo
+        public IRepository<ServiceInfo> ServiceInfo
         {
             get
             {
@@ -74,7 +76,7 @@ namespace DAL
                 return serviceInfoRepository;
             }
         }
-        public ServiceSoftwareRepository ServiceSoftware
+        public IRepository<ServiceSoftware> ServiceSoftware
         {
             get
             {
