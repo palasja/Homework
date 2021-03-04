@@ -6,10 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ModelsBLL\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.3" />
   </ItemGroup>
 
