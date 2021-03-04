@@ -18,7 +18,7 @@ namespace BLL.Services
         public static List<OrganizationDTO> GetOrganizationOnArea(AreaToMenu area )
         {
             var AllOrganizations = uow.Organizations.GetAll();
-            var AreaOrganization  = AllOrganizations.Where(org => org.Area.Id == area.Id).ToList();
+            var AreaOrganization  = AllOrganizations.Where(org => org.AreaId == area.Id).ToList();
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Organization, OrganizationDTO>() );
             var mapper = new Mapper(config);
             var organization = mapper.Map<List<OrganizationDTO>>(AreaOrganization);

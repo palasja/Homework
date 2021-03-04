@@ -18,8 +18,12 @@
 }
 
 @code {
-    [Parameter] public AreaToMenu Area { get; set; } = new AreaToMenu() { Id = 3, SimpleName = "Наровля" };
+    [Parameter] public AreaToMenu Area { get; set; } = new AreaToMenu() { Id = 2, SimpleName = "Мозырь" };
     public int Id = 2;
+    List<OrganizationDTO> AreaOrganization;
+    protected override void OnInitialized()
+    {
+        AreaOrganization = OrganizationService.GetOrganizationOnArea(Area);
+    }
 
-    List<OrganizationDTO> AreaOrganization = new OrganizationService().GetOrganizationOnArea(new AreaToMenu() { Id = 3, SimpleName = "Наровля" });
 }

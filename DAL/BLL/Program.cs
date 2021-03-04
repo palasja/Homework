@@ -18,9 +18,9 @@ namespace BLL
         {
             var getOrg = OrganizationService.GetOrganizationOnArea(new AreaToMenu() { Id = 3, SimpleName = "Наровля" });
             var area = AreaServices.GetAreasSimple();
-            foreach (var item in area)
+            foreach (var item in getOrg)
             {
-                Console.WriteLine(item.SimpleName);
+                Console.WriteLine(item.FullName);
             }
         }
 
