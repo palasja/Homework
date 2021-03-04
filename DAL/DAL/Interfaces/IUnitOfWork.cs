@@ -16,6 +16,6 @@ namespace DAL.Interfaces
         public IRepository<ServiceHardware> ServiceHardware { get; }
         public IRepository<ServiceInfo> ServiceInfo { get; }
         public IRepository<ServiceSoftware> ServiceSoftware { get; }
-        public void Save();
+        public void SaveAsync();
     }
 }

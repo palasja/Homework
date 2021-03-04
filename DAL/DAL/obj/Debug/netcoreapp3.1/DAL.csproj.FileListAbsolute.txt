@@ -71,7 +71,6 @@ C:\Users\Lenovo\source\repos\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CopyComp
 C:\Users\Lenovo\source\repos\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.dll
 C:\Users\Lenovo\source\repos\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
 C:\Users\Lenovo\source\repos\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.genruntimeconfig.cache
-D:\C#\Task12\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.csprojAssemblyReference.cache
 D:\C#\Task12\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
 D:\C#\Task12\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
 D:\C#\Task12\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
@@ -144,3 +143,4 @@ D:\C#\Task12\DAL\DAL\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Sys
 D:\C#\Task12\DAL\DAL\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\C#\Task12\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CopyComplete
 D:\C#\Task12\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.genruntimeconfig.cache
+D:\C#\Task12\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.csprojAssemblyReference.cache

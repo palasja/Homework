@@ -5,6 +5,7 @@ using DAL.Interfaces;
 using DAL.ModelsDAL;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BLL.Services
@@ -20,7 +21,7 @@ namespace BLL.Services
             var mapper = new Mapper(config);
             var areas = mapper.Map<List<AreaToMenu>>(areasDB);
             
-            return areas;
+            return areas.OrderBy(a => a.SimpleName).ToList();
         }
 
 

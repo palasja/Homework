@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
@@ -21,14 +22,14 @@ namespace DAL.Repositories
             return db.Organizations;
         }
 
-        public Organization Get(int id)
+        public async Task<Organization> GetAsync(int id)
         {
-            return db.Organizations.Find(id);
+            return await db.Organizations.FindAsync(id);
         }
 
-        public void Create(Organization organization)
+        public async void CreateAsync(Organization organization)
         {
-            db.Organizations.Add(organization);
+            await db.Organizations.AddAsync(organization);
         }
 
         public void Update(Organization organization)
@@ -36,9 +37,9 @@ namespace DAL.Repositories
             db.Entry(organization).State = EntityState.Modified;
         }
 
-        public void Delete(int id)
+        public async void DeleteAsync(int id)
         {
-            Organization organization = db.Organizations.Find(id);
+            Organization organization = await db.Organizations.FindAsync(id);
             if (organization != null)
                 db.Organizations.Remove(organization);
         }

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
@@ -21,14 +22,14 @@ namespace DAL.Repositories
             return db.ServiceHardwares;
         }
 
-        public ServiceHardware Get(int id)
+        public async Task<ServiceHardware> GetAsync(int id)
         {
-            return db.ServiceHardwares.Find(id);
+            return await db.ServiceHardwares.FindAsync(id);
         }
 
-        public void Create(ServiceHardware serviceHardware)
+        public async void CreateAsync(ServiceHardware serviceHardware)
         {
-            db.ServiceHardwares.Add(serviceHardware);
+            await db.ServiceHardwares.AddAsync(serviceHardware);
         }
 
         public void Update(ServiceHardware serviceHardware)
@@ -36,9 +37,9 @@ namespace DAL.Repositories
             db.Entry(serviceHardware).State = EntityState.Modified;
         }
 
-        public void Delete(int id)
+        public async void DeleteAsync(int id)
         {
-            ServiceHardware serviceHardware = db.ServiceHardwares.Find(id);
+            ServiceHardware serviceHardware = await db.ServiceHardwares.FindAsync(id);
             if (serviceHardware != null)
                 db.ServiceHardwares.Remove(serviceHardware);
         }

@@ -1,0 +1,25 @@
+﻿@page "/OrganizationsArea"
+@foreach (var org in AreaOrganization)
+{
+    <div class="row">
+        <div class="col-2">
+            @org.FullName
+        </div>
+        <div class="col-2">
+            @org.Address
+        </div>
+        <div class="col-2">
+            @org.Smdo
+        </div>
+        <div class="col-2">
+            @org.Email
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public AreaToMenu Area { get; set; } = new AreaToMenu() { Id = 3, SimpleName = "Наровля" };
+    public int Id = 2;
+
+    List<OrganizationDTO> AreaOrganization = new OrganizationService().GetOrganizationOnArea(new AreaToMenu() { Id = 3, SimpleName = "Наровля" });
+}

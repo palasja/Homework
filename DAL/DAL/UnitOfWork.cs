@@ -86,9 +86,9 @@ namespace DAL
             }
         }
 
-        public void Save()
+        public void SaveAsync()
         {
-            db.SaveChanges();
+            db.SaveChangesAsync();
         }
 
         private bool disposed = false;
@@ -99,7 +99,7 @@ namespace DAL
             {
                 if (disposing)
                 {
-                    db.Dispose();
+                    db.DisposeAsync();
                 }
                 this.disposed = true;
             }

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
@@ -18,27 +19,27 @@ namespace DAL.Repositories
 
         public IEnumerable<Area> GetAll()
         {
-            return db.Areas;
+            return db.Areas ;
         }
 
-        public Area Get(int id)
+        public async Task<Area> GetAsync(int id)
         {
-            return db.Areas.Find(id);
+            return await db.Areas.FindAsync(id);
         }
 
-        public void Create(Area area)
+        public async void CreateAsync(Area area)
         {
-            db.Areas.Add(area);
+            await db.Areas.AddAsync(area);
         }
 
         public void Update(Area area)
         {
-            db.Entry(area).State = EntityState.Modified;
+           db.Entry(area).State = EntityState.Modified;
         }
 
-        public void Delete(int id)
+        public async void DeleteAsync(int id)
         {
-            Area area = db.Areas.Find(id);
+            Area area = await db.Areas.FindAsync(id);
             if (area != null)
                 db.Areas.Remove(area);
         }

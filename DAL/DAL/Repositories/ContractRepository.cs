@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
@@ -21,14 +22,14 @@ namespace DAL.Repositories
             return db.Contracts;
         }
 
-        public Contract Get(int id)
+        public async Task<Contract> GetAsync(int id)
         {
-            return db.Contracts.Find(id);
+            return await db.Contracts.FindAsync(id);
         }
 
-        public void Create(Contract contract)
+        public async void CreateAsync(Contract contract)
         {
-            db.Contracts.Add(contract);
+            await db.Contracts.AddAsync(contract);
         }
 
         public void Update(Contract contract)
@@ -36,9 +37,9 @@ namespace DAL.Repositories
             db.Entry(contract).State = EntityState.Modified;
         }
 
-        public void Delete(int id)
+        public async void DeleteAsync(int id)
         {
-            Contract contract = db.Contracts.Find(id);
+            Contract contract = await db.Contracts.FindAsync(id);
             if (contract != null)
                 db.Contracts.Remove(contract);
         }
