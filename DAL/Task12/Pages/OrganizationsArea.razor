@@ -1,29 +1,52 @@
 ﻿@page "/OrganizationsArea"
-@foreach (var org in AreaOrganization)
+@page "/OrganizationsArea/{AreaId:int}"
+@inject OrganizationService organizationService
+
+@if (Organizations == null)
 {
-    <div class="row">
-        <div class="col-2">
-            @org.FullName
-        </div>
-        <div class="col-2">
-            @org.Address
-        </div>
-        <div class="col-2">
-            @org.Smdo
-        </div>
-        <div class="col-2">
-            @org.Email
-        </div>
-    </div>
+    @*    <p><em>Loading...</em></p>*@
+}
+else
+{
+    <button class="btn btn-light m-3" @onclick="NewContract">Добавить</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Адрес</th>
+                <th>Email</th>
+                <th>СМДО</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var org in Organizations)
+            {
+                <tr>
+                    <td>  <NavLink href=@($"Contracts/{@org.Id}")>@org.FullName</NavLink></td>
+                    <td>@org.Address</td>
+                    <td>@org.Email</td>
+                    <td>@org.Smdo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <NewContract @ref="newContract" onCancel="onCancel" AreaId="@AreaId"></NewContract>
 }
 
 @code {
-    [Parameter] public AreaToMenu Area { get; set; } = new AreaToMenu() { Id = 2, SimpleName = "Мозырь" };
-    public int Id = 2;
-    List<OrganizationDTO> AreaOrganization;
-    protected override void OnInitialized()
+    [Parameter] public int AreaId { get; set; }
+    NewContract newContract;
+    List<OrganizationDTO> Organizations;
+    protected override async Task OnInitializedAsync()
     {
-        AreaOrganization = OrganizationService.GetOrganizationOnArea(Area);
+        Organizations = await organizationService.GetOrganizationOnAreaAsync((int)AreaId);
     }
-
+    void onCancel()
+    {
+        newContract.Hide();
+    }
+    void NewContract()
+    {
+        newContract.Show();
+    }
 }

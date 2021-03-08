@@ -11,7 +11,7 @@ namespace DAL.ModelsDAL
         public int Id { get; set; }
         public string Number{ get; set; }
         [Required]
-        public DateTime SatartDate { get; set; }
+        public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public ICollection<ServiceSoftware> ServicesSoftware { get; set; }
         public ICollection<ServiceHardware> ServicesHardware { get; set; }

@@ -16,10 +16,9 @@ namespace DAL.Repositories
         {
             this.db = db;
         }
-
-        public IEnumerable<Contract> GetAll()
+        public async Task<List<Contract>> GetAllAsync()
         {
-            return db.Contracts;
+            return await db.Contracts.ToListAsync();
         }
 
         public async Task<Contract> GetAsync(int id)
@@ -27,7 +26,7 @@ namespace DAL.Repositories
             return await db.Contracts.FindAsync(id);
         }
 
-        public async void CreateAsync(Contract contract)
+        public async Task CreateAsync(Contract contract)
         {
             await db.Contracts.AddAsync(contract);
         }
@@ -37,7 +36,7 @@ namespace DAL.Repositories
             db.Entry(contract).State = EntityState.Modified;
         }
 
-        public async void DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
             Contract contract = await db.Contracts.FindAsync(id);
             if (contract != null)

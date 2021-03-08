@@ -17,17 +17,16 @@ namespace DAL.Repositories
             this.db = db;
         }
 
-        public IEnumerable<ServiceHardware> GetAll()
+        public async Task<List<ServiceHardware>> GetAllAsync()
         {
-            return db.ServiceHardwares;
+            return await db.ServiceHardwares.ToListAsync();
         }
-
         public async Task<ServiceHardware> GetAsync(int id)
         {
             return await db.ServiceHardwares.FindAsync(id);
         }
 
-        public async void CreateAsync(ServiceHardware serviceHardware)
+        public async Task CreateAsync(ServiceHardware serviceHardware)
         {
             await db.ServiceHardwares.AddAsync(serviceHardware);
         }
@@ -37,7 +36,7 @@ namespace DAL.Repositories
             db.Entry(serviceHardware).State = EntityState.Modified;
         }
 
-        public async void DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
             ServiceHardware serviceHardware = await db.ServiceHardwares.FindAsync(id);
             if (serviceHardware != null)

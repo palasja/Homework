@@ -17,17 +17,16 @@ namespace DAL.Repositories
             this.db = db;
         }
 
-        public IEnumerable<Area> GetAll()
+        public async Task<List<Area>> GetAllAsync()
         {
-            return db.Areas ;
+            return await db.Areas.ToListAsync() ;
         }
-
         public async Task<Area> GetAsync(int id)
         {
             return await db.Areas.FindAsync(id);
         }
 
-        public async void CreateAsync(Area area)
+        public async Task CreateAsync(Area area)
         {
             await db.Areas.AddAsync(area);
         }
@@ -37,11 +36,13 @@ namespace DAL.Repositories
            db.Entry(area).State = EntityState.Modified;
         }
 
-        public async void DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
             Area area = await db.Areas.FindAsync(id);
             if (area != null)
                 db.Areas.Remove(area);
         }
+
+
     }
 }

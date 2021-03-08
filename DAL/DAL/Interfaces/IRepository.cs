@@ -7,10 +7,10 @@ namespace DAL.Interfaces
 {
    public interface IRepository<T> where T : class
     {
-        IEnumerable<T> GetAll();
+        Task<List<T>> GetAllAsync();
         Task<T> GetAsync(int id);
-        void CreateAsync(T item);
+        Task CreateAsync(T item);
         void Update(T item);
-        void DeleteAsync(int id);
+        Task DeleteAsync(int id);
     }
 }

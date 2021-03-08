@@ -12,6 +12,6 @@ namespace BLL.ModelsDTO.Serivces
         public string Name { get; set; }
         public double MainCost { get; set; }
         public double AdditionalCost { get; set; }
-        public string Descrioption { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -5,10 +5,11 @@ using DAL.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class UnitOfWork : IUnitOfWork, IDisposable
+    public class UnitOfWork : IUnitOfWork
     {
         private ContractContext db = new ContractContext();
 
@@ -86,9 +87,9 @@ namespace DAL
             }
         }
 
-        public void SaveAsync()
+        public async Task SaveAsync()
         {
-            db.SaveChangesAsync();
+            await db.SaveChangesAsync();
         }
 
         private bool disposed = false;
@@ -110,5 +111,6 @@ namespace DAL
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
     }
 }

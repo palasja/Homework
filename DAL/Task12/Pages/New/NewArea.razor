@@ -1,0 +1,32 @@
+﻿@page "/NewArea"
+
+@inject AreaServices AreaServices
+<div class="row">
+    <div class="col">
+        <form>
+            <div class="form-group">
+                <label for="fullName">Полное название</label>
+                <input type="text" class="form-control" aria-describedby="fullName" @bind="@area.FullName" id="fullName" placeholder="Наровлянсккий район" />
+                <small id="fullName" class="form-text text-muted">Для отображения в справочнике</small>
+            </div>
+            <div class="form-group">
+                <label for="simpleName">Краткое название</label>
+                <input type="text" class="form-control" aria-describedby="simpleName" @bind="@area.SimpleName" id="simpleName" placeholder="Наровля" />
+                <small id="simpleName" class="form-text text-muted">Для отображения в меню</small>
+            </div>
+            <button type="submit" class="btn btn-primary" @onclick="AddArea">Submit</button>
+        </form>
+    </div>
+    <div class="col">
+        <h3>@area.FullName</h3>
+        <h3>@area.SimpleName</h3>
+    </div>
+</div>
+
+@code {
+    AreaDTO area = new AreaDTO();
+
+    private void AddArea() {
+        AreaServices.AddAreaAsync(area);
+    }
+}

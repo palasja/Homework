@@ -17,9 +17,9 @@ namespace DAL.Repositories
             this.db = db;
         }
 
-        public IEnumerable<Organization> GetAll()
+        public async Task<List<Organization>> GetAllAsync()
         {
-            return db.Organizations;
+            return await db.Organizations.ToListAsync();
         }
 
         public async Task<Organization> GetAsync(int id)
@@ -27,7 +27,7 @@ namespace DAL.Repositories
             return await db.Organizations.FindAsync(id);
         }
 
-        public async void CreateAsync(Organization organization)
+        public async Task CreateAsync(Organization organization)
         {
             await db.Organizations.AddAsync(organization);
         }
@@ -37,7 +37,7 @@ namespace DAL.Repositories
             db.Entry(organization).State = EntityState.Modified;
         }
 
-        public async void DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
             Organization organization = await db.Organizations.FindAsync(id);
             if (organization != null)

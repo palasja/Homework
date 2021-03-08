@@ -17,7 +17,7 @@ namespace DAL.TestRepository
             {
                 Id = 1,
                 Number = "12-123/ВК6",
-                SatartDate = DateTime.Now,
+                StartDate = DateTime.Now,
                 EndDate = DateTime.Now,
                 OrganizationId = 1,
             });
@@ -25,7 +25,7 @@ namespace DAL.TestRepository
             {
                 Id = 2,
                 Number = "12-1/ГК6",
-                SatartDate = DateTime.Now,
+                StartDate = DateTime.Now,
                 EndDate = DateTime.Now,
                 OrganizationId = 2,
             });
@@ -33,7 +33,7 @@ namespace DAL.TestRepository
             {
                 Id = 3,
                 Number = "33-4/НК-6",
-                SatartDate = DateTime.Now,
+                StartDate = DateTime.Now,
                 EndDate = DateTime.Now,
                 OrganizationId = 3,
                 
@@ -42,10 +42,10 @@ namespace DAL.TestRepository
             {
                 Id = 4,
                 Number = "4484/ОИ-6",
-                SatartDate = DateTime.Now,
+                StartDate = DateTime.Now,
                 EndDate = DateTime.Now,
                 OrganizationId = 4,
-            });;
+            });
             return contracts;
         }
     }

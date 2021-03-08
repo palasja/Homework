@@ -17,17 +17,16 @@ namespace DAL.Repositories
             this.db = db;
         }
 
-        public IEnumerable<Person> GetAll()
+        public async Task<List<Person>> GetAllAsync()
         {
-            return db.People;
+            return await db.People.ToListAsync();
         }
-
         public async Task<Person> GetAsync(int id)
         {
             return await db.People.FindAsync(id);
         }
 
-        public async void CreateAsync (Person person)
+        public async Task CreateAsync (Person person)
         {
             await db.People.AddAsync(person);
         }
@@ -37,7 +36,7 @@ namespace DAL.Repositories
             db.Entry(person).State = EntityState.Modified;
         }
 
-        public async void DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
             Person person = await db.People.FindAsync(id);
             if (person != null)

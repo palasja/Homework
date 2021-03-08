@@ -4,10 +4,11 @@ using DAL.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DAL.Interfaces
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         public IRepository<Area> Areas { get; }
         public IRepository<Contract> Contracts { get; }
@@ -16,6 +17,6 @@ namespace DAL.Interfaces
         public IRepository<ServiceHardware> ServiceHardware { get; }
         public IRepository<ServiceInfo> ServiceInfo { get; }
         public IRepository<ServiceSoftware> ServiceSoftware { get; }
-        public void SaveAsync();
+        public Task SaveAsync();
     }
 }

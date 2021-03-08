@@ -17,7 +17,7 @@ namespace DAL.TestRepository
                 Name = "Обслуживание КлиентТК",
                 MainCost = 23.5,
                 AdditionalCost = 15.3,
-                Descrioption = "Консультации, удалённая поддержка. При необходимости выезд к клиенту"
+                Description = "Консультации, удалённая поддержка. При необходимости выезд к клиенту"
             });
             si.Add(new ServiceInfo()
             {
@@ -25,7 +25,7 @@ namespace DAL.TestRepository
                 Name = "Обслуживание ГРС",
                 MainCost = 19.3,
                 AdditionalCost = 14.2,
-                Descrioption = "Установкаю, консультации, удалённая поддержка. При необходимости выезд к клиенту."
+                Description = "Установкаю, консультации, удалённая поддержка. При необходимости выезд к клиенту."
             });
             si.Add(new ServiceInfo()
             {
@@ -33,7 +33,7 @@ namespace DAL.TestRepository
                 Name = "Сопровождение вычислительно техники",
                 MainCost = 32.16,
                 AdditionalCost = 26.3,
-                Descrioption = "Обслуживание техники. Ежемесечная проверка с диагностикой на месте эксплуатации."
+                Description = "Обслуживание техники. Ежемесечная проверка с диагностикой на месте эксплуатации."
             });
             si.Add(new ServiceInfo()
             {
@@ -41,7 +41,7 @@ namespace DAL.TestRepository
                 Name = "Удалённое сопровождение вычислительно техники",
                 MainCost = 25.86,
                 AdditionalCost = 21.6,
-                Descrioption = "Удалённое бслуживание техники без выезда на место"
+                Description = "Удалённое бслуживание техники без выезда на место"
             });
             return si;
         }

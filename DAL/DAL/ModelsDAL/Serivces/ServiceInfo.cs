@@ -15,6 +15,6 @@ namespace DAL.ModelsDAL.Serivces
         public double MainCost { get; set; }
         [DefaultValue(0)]
         public double AdditionalCost { get; set; }
-        public string Descrioption { get; set; }
+        public string Description { get; set; }
     }
 }

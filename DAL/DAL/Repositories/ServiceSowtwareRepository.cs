@@ -16,18 +16,16 @@ namespace DAL.Repositories
         {
             this.db = db;
         }
-
-        public IEnumerable<ServiceSoftware> GetAll()
+        public async Task<List<ServiceSoftware>> GetAllAsync()
         {
-            return db.ServiceSoftwares;
+            return await db.ServiceSoftwares.ToListAsync();
         }
-
         public async Task<ServiceSoftware> GetAsync(int id)
         {
             return await db.ServiceSoftwares.FindAsync(id);
         }
 
-        public async void CreateAsync(ServiceSoftware serviceSoftware)
+        public async Task CreateAsync(ServiceSoftware serviceSoftware)
         {
            await db.ServiceSoftwares.AddAsync(serviceSoftware);
         }
@@ -37,7 +35,7 @@ namespace DAL.Repositories
             db.Entry(serviceSoftware).State = EntityState.Modified;
         }
 
-        public async void DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
             ServiceSoftware serviceSoftware = await db.ServiceSoftwares.FindAsync(id);
             if (serviceSoftware != null)

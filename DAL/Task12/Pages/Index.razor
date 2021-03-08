@@ -1,7 +1,74 @@
 ﻿@page "/"
+@inject AreaServices AreaServices
+<div class="row">
+    <div class="col col-3 m-3">
+        <NavLink class="nav-link bg-light" href="NewArea">
+            <span class="oi oi-plus" aria-hidden="true"></span> Добавить
+        </NavLink>
+    </div>
+</div>
+@if (AreasOrgCount == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Кол-во организаций</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var area in AreasOrgCount)
+            {
+            <tr>
+                <td>
+                    <NavLink class="nav-link" href=@($"OrganizationsArea/{area.Area.Id}") Match="NavLinkMatch.All">
+                        @area.Area.FullName
+                </NavLink>
+            </td>
+            <td>@area.CountOrg</td>
+            <td><button class="btn btn-danger" @onclick="() => Remove(area.Area.Id)">Удалить</button></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <Confirm @ref="confirm" onCancel="onCancel" onConfirm="onConfirm">
+        <div class="text-danger">Удалить ?</div>
+    </Confirm>
+}
 
-<h1>Hello, world!</h1>
+@code {
+    protected List<AreaCountOrg> AreasOrgCount;
 
-Welcome to your new app.
+    protected override async Task OnInitializedAsync()
+    {
+        AreasOrgCount = await AreaServices.GetAreasForIndexAsync();
+    }
+    int deletedOrg;
+    Confirm confirm;
+    void Remove(int id)
+    {
+        deletedOrg = id;
+        confirm.Show();
+    }
+    async void onConfirm()
+    {
+        confirm.Hide();
+        await AreaServices.DelAreaAsync(deletedOrg);
+        StateHasChanged();
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    }
+
+    void onCancel()
+    {
+        confirm.Hide();
+    }
+
+
+}
+
+

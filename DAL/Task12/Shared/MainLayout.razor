@@ -1,5 +1,5 @@
 ﻿@inherits LayoutComponentBase
-
+@inject AreaServices areaServices
 <div class="sidebar">
     <AreaMenu Areas="areas" />
 </div>
@@ -16,5 +16,9 @@
 
 @code
 {
-    List<AreaToMenu> areas = AreaServices.GetAreasSimple();
+    List<AreaToMenu> areas = new List<AreaToMenu>();
+    protected override async Task OnInitializedAsync()
+    {
+        areas = await areaServices.GetAreasSimpleAsync();
+    }
 }

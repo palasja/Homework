@@ -17,17 +17,16 @@ namespace DAL.Repositories
             this.db = db;
         }
 
-        public IEnumerable<ServiceInfo> GetAll()
+        public async Task<List<ServiceInfo>> GetAllAsync()
         {
-            return db.ServiceInfo;
+            return await db.ServiceInfo.ToListAsync();
         }
-
         public async Task<ServiceInfo> GetAsync(int id)
         {
             return await db.ServiceInfo.FindAsync(id);
         }
 
-        public async void CreateAsync(ServiceInfo serviceInfo)
+        public async Task CreateAsync(ServiceInfo serviceInfo)
         {
             await db.ServiceInfo.AddAsync(serviceInfo);
         }
@@ -37,7 +36,7 @@ namespace DAL.Repositories
             db.Entry(serviceInfo).State = EntityState.Modified;
         }
 
-        public async void DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
             ServiceInfo serviceInfo = await db.ServiceInfo.FindAsync(id);
             if (serviceInfo != null)

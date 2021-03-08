@@ -8,6 +8,9 @@ using DAL.ModelsDAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace BLL
 {
@@ -16,25 +19,21 @@ namespace BLL
 
         static void Main(string[] args)
         {
-            var getOrg = OrganizationService.GetOrganizationOnArea(new AreaToMenu() { Id = 3, SimpleName = "Наровля" });
-            var area = AreaServices.GetAreasSimple();
-            foreach (var item in getOrg)
-            {
-                Console.WriteLine(item.FullName);
-            }
+            var startDate = DateTime.Parse("2019-06-01");
+            var endDate = DateTime.Parse("2021-12-31");
+
+            var a = endDate - startDate;
+            var q = endDate - startDate;
+            /*            ContractService service = new ContractService();
+
+                        var areaDTO = new AreaDTO() { Id = 3, FullName = "Наровлянский район", SimpleName = "Наровля" };
+
+                        Console.WriteLine(service.GetCostOnPeriod(areaDTO, startDate, endDate).Result); */
+            Console.WriteLine((endDate.Year - startDate.Year) *12 + (endDate.Month - startDate.Month));
         }
 
-        public static List<OrganizationDTO> GetOrganizationOnArea(AreaToMenu area)
-        {
-            IUnitOfWork uow = new UnitOfWork();
-            var AllOrganizations = uow.Organizations.GetAll();
-            var AreaOrganization = AllOrganizations.Where(org => org.Area.Id == area.Id).ToList();
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Organization, OrganizationDTO>());
-            var mapper = new Mapper(config);
-            var organization = mapper.Map<List<OrganizationDTO>>(AreaOrganization);
 
-            return organization.OrderBy(org => org.FullName).ToList();
-        }
+
     }
 
     

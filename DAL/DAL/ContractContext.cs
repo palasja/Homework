@@ -24,7 +24,7 @@ namespace DAL
         {
             /*var config = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appconfig.json").Build();*/
             var config = new ConfigurationBuilder().SetBasePath(@"S:\C#\Task12\DAL\DAL").AddJsonFile("appconfig.json").Build();
-            optionsBuilder.UseSqlServer(config.GetConnectionString("ConnectionStrings")); ;
+            optionsBuilder.UseSqlServer(config.GetConnectionString("ConnectionStrings"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
