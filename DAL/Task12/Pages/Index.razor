@@ -2,7 +2,7 @@
 @inject AreaServices AreaServices
 <div class="row">
     <div class="col col-3 m-3">
-        <button class="btn btn-light m-3" @onclick="AddArea">Добавить</button>
+        <button class="btn btn-light m-3" @onclick="() => areaAdd.Show()">Добавить</button>
     </div>
 </div>
 @if (AreasOrgCount == null)
@@ -31,13 +31,14 @@ else
                     <td>@area.CountOrg</td>
                     <td>
                         <button class="btn btn-danger" @onclick="() => Remove(area.Area.Id)">Удалить</button>
-                        <button class="btn btn-danger" @onclick="() => Remove(area.Area.Id)">Изменить</button>
+                        <button class="btn btn-danger" @onclick="() => onChangeArea(area.Area)">Изменить</button>
                     </td>
                 </tr>
-                <Confirm @ref="confirm" onCancel="onCancelDelete" onConfirm="onConfirm">
-                    <div class="text-danger">Удалить ?</div>
+                <Confirm @ref="confirm" onCancel="() => confirm.Hide()" onConfirm="onConfirm">
+                    <div class="text-danger">Удалить @area.Area.FullName ?</div>
                 </Confirm>
-                <Area @ref="areaModal" onCancel="onCancelArea" />
+                <Area @ref="areaChange" Title="Изменить" onCancel="() => areaChange.Hide()" isChange="true" area="changedArea"/>
+                <Area @ref="areaAdd" Title="Добавить" onCancel="() => areaAdd.Hide()" />
             }
         </tbody>
     </table>
@@ -53,12 +54,14 @@ else
     }
     int deletedOrg;
     Confirm confirm;
-    Area areaModal;
+    Area areaChange;
+    Area areaAdd;
     void Remove(int id)
     {
         deletedOrg = id;
         confirm.Show();
     }
+
     async void onConfirm()
     {
         confirm.Hide();
@@ -66,18 +69,13 @@ else
         StateHasChanged();
 
     }
-    void AddArea()
-    {
-        areaModal.Show();
-    }
-    void onCancelDelete()
-    {
-        confirm.Hide();
-    }
 
-    void onCancelArea()
+
+    AreaDTO changedArea;
+    void onChangeArea(AreaDTO area)
     {
-        areaModal.Hide();
+        changedArea = area;
+        areaChange.Show();
     }
 
 }

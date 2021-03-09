@@ -8,7 +8,7 @@ namespace BLL.ModelsBLL
 {
     public class AreaCountOrg
     {
-        public Area Area { get; set; }
+        public AreaDTO Area { get; set; }
         public int CountOrg { get; set; }
     }
 }

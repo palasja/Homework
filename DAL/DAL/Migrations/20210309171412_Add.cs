@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
-    public partial class Nullable : Migration
+    public partial class Add : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -204,10 +204,10 @@ namespace DAL.Migrations
                 columns: new[] { "Id", "EndDate", "Number", "OrganizationId", "StartDate" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(4772), "12-123/ВК6", 1, new DateTime(2021, 3, 9, 16, 10, 3, 39, DateTimeKind.Local).AddTicks(6660) },
-                    { 2, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5570), "12-1/ГК6", 2, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5559) },
-                    { 3, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5585), "33-4/НК-6", 3, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5584) },
-                    { 4, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5588), "4484/ОИ-6", 4, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5587) }
+                    { 1, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(909), "12-123/ВК6", 1, new DateTime(2021, 3, 9, 20, 14, 11, 353, DateTimeKind.Local).AddTicks(6706) },
+                    { 2, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2135), "12-1/ГК6", 2, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2121) },
+                    { 3, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2151), "33-4/НК-6", 3, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2149) },
+                    { 4, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2155), "4484/ОИ-6", 4, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2153) }
                 });
 
             migrationBuilder.InsertData(

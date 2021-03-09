@@ -20,12 +20,10 @@ namespace BLL.Services
         public async Task<List<AreaToMenu>> GetAreasSimpleAsync()
         {
             List<AreaToMenu> areas = new List<AreaToMenu>();
-            using (IUnitOfWork uof = new UnitOfWork())
+
+            using (var context = new ContractContext())
             {
-                var areasDB = await uof.Areas.GetAllAsync();
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<Area, AreaToMenu>());
-                var mapper = new Mapper(config);
-                areas = mapper.Map<List<AreaToMenu>>(areasDB);
+                areas = context.Areas.Select(a => new AreaToMenu (){ Id = a.Id, SimpleName = a.SimpleName }).AsEnumerable().Select(a => new AreaToMenu (){ Id = a.Id, SimpleName = a.SimpleName }).ToList();
             } 
             return areas.OrderBy(a => a.SimpleName).ToList();
         }
@@ -33,14 +31,18 @@ namespace BLL.Services
         public async Task<List<AreaCountOrg>> GetAreasForIndexAsync()
         {
             List<AreaCountOrg> areas = new List<AreaCountOrg>();
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Area, AreaDTO>());
+            var mapper = new Mapper(config);
             using (var context = new ContractContext())
             {
                 areas = await context.Areas.Include(a => a.Organizations).Select(area => new AreaCountOrg()
                 {
-                    Area = area,
+                    Area = mapper.Map<AreaDTO>(area),
                     CountOrg = area.Organizations.Count()
-                }).OrderBy(area => area.Area.FullName).ToListAsync();
+                }).ToListAsync();
             }
+            var a = 0;
             return areas;
         }
 
@@ -63,6 +65,17 @@ namespace BLL.Services
             {
                 await uow.Areas.DeleteAsync(id);
                 await uow.SaveAsync();
+            }
+        }
+
+        public async Task UpdateAreaAsync(AreaDTO areaDTO)
+        {
+            using (var context = new ContractContext())
+            {
+                var area = context.Areas.Where(a => a.Id == areaDTO.Id).FirstOrDefault();
+                area.FullName = areaDTO.FullName;
+                area.SimpleName = areaDTO.SimpleName;
+                await context.SaveChangesAsync();
             }
         }
     }
