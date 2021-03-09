@@ -11,7 +11,7 @@ namespace DAL.ModelsDAL.Serivces
         public int Id { get; set; }
         [DefaultValue(0)]
         public int ServerCount { get; set; }
-        [Required]
+        [DefaultValue(0)]
         public int WorkplaceCount { get; set; }
         public ServiceInfo ServiceInfo { get; set; }
         public int ServiceInfoId { get; set; }

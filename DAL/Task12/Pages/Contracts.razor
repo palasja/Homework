@@ -29,7 +29,7 @@ else
                     <td> @contract.Id</td>
                     <td> @contract.Number</td>
                     <td> @contract.StartDate.ToString("dd.MM.yyyy")</td>
-                    <td> @contract.EndDate.ToString("dd.MM.yyyy")</td>
+                    <td> @contract.EndDate == null ? "-" : @contract.EndDate?.ToString("dd.MM.yyyy")</td>
                 </tr>
                 @foreach (var hardware in @contract.HardwareForInfo)
                 {

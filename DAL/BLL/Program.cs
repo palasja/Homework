@@ -20,16 +20,21 @@ namespace BLL
         static void Main(string[] args)
         {
             var startDate = DateTime.Parse("2019-06-01");
-            var endDate = DateTime.Parse("2021-12-31");
+            var endDate = DateTime.Parse("2020-12-31");
 
-            var a = endDate - startDate;
-            var q = endDate - startDate;
-            /*            ContractService service = new ContractService();
+            var cStart = DateTime.Now;
+            var cEnd = DateTime.Now;
 
-                        var areaDTO = new AreaDTO() { Id = 3, FullName = "Наровлянский район", SimpleName = "Наровля" };
+            Console.WriteLine((startDate < cStart && endDate < cStart));
+            Console.WriteLine((startDate > cEnd && endDate > cEnd));
+            Console.WriteLine("=================Convert=======================");
+            Console.WriteLine(!(startDate < cStart && endDate < cStart));
+            Console.WriteLine(!(startDate > cEnd && endDate > cEnd) || !(startDate > cEnd && endDate > cEnd));
 
-                        Console.WriteLine(service.GetCostOnPeriod(areaDTO, startDate, endDate).Result); */
-            Console.WriteLine((endDate.Year - startDate.Year) *12 + (endDate.Month - startDate.Month));
+            Console.WriteLine(!(startDate < cStart && endDate < cStart));
+
+            /*(c => (!(startDate < cStart && endDate < cStart) || !(startDate > cEnd && endDate > cEnd)*/
+            /*            Console.WriteLine((endDate.Year - startDate.Year) *12 + (endDate.Month - startDate.Month));*/
         }
 
 

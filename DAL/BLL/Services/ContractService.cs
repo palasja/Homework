@@ -67,29 +67,27 @@ namespace BLL.Services
             }
         }
 
-        public async Task<double> GetCostOnPeriod(AreaDTO areaDTO, DateTime startFilter, DateTime endFilter)
+        public async Task<double> GetCostOnPeriod(int areaId, DateTime startFilter, DateTime endFilter)
         {
             double fullCost = 0;
-            var contracts = await FilterContract(areaDTO, startFilter, endFilter);
+            var contracts = await FilterContract(areaId, startFilter, endFilter);
             fullCost += GetCostHardware(contracts);
             fullCost += GetCostSoftware(contracts);
             return fullCost;
         }
 
-        public async Task<List<Contract>> FilterContract(AreaDTO areaDTO, DateTime startFilter, DateTime endFilter)
+        public async Task<List<Contract>> FilterContract(int areaId, DateTime startFilter, DateTime endFilter)
         {
             var contracts = new List<Contract>();
             using (ContractContext context = new ContractContext())
             {
-                contracts = await context.Contracts.Include(c => c.ServicesHardware).ThenInclude(sh => sh.ServiceInfo).
+                contracts = await context.Contracts.Where(c => c.Organization.AreaId == areaId).Include(c => c.ServicesHardware).ThenInclude(sh => sh.ServiceInfo).
                      Include(c => c.ServicesSoftware).ThenInclude(sh => sh.ServiceInfo).ToListAsync();
             }
-
-            var filtredContracts = contracts.Where(c => c.Organization.AreaId == areaDTO.Id &&
-            ((startFilter < c.StartDate && endFilter < c.StartDate) ||
-            startFilter > c.EndDate && endFilter > c.EndDate)
-            );
-            return contracts;
+            var a = contracts.Where((c => ((!(startFilter < c.StartDate && endFilter < c.StartDate))))).ToList();
+            var b = contracts.Where((c => ((!(startFilter > c.EndDate && endFilter > c.EndDate))))).ToList();
+            var filtredContracts = contracts.Where((c => (!((startFilter < c.StartDate && endFilter < c.StartDate) || (startFilter > c.EndDate && endFilter > c.EndDate))))).ToList();
+            return filtredContracts;
         }
 
         private double GetCostSoftware(List<Contract> contracts)

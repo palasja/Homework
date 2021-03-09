@@ -44,7 +44,7 @@ namespace BLL.Services
             return areas;
         }
 
-        public void AddAreaAsync(AreaDTO areaDTO)
+        public async Task AddAreaAsync(AreaDTO areaDTO)
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<AreaDTO, Area>());
             var mapper = new Mapper(config);
@@ -52,8 +52,8 @@ namespace BLL.Services
 
             using (IUnitOfWork uow = new UnitOfWork())
             {
-                uow.Areas.CreateAsync(area);
-                uow.SaveAsync();
+                await uow.Areas.CreateAsync(area);
+                await uow.SaveAsync();
             }
         }
 

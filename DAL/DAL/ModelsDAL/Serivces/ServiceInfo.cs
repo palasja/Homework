@@ -13,8 +13,8 @@ namespace DAL.ModelsDAL.Serivces
         public string Name { get; set; }
         [Required]
         public double MainCost { get; set; }
-        [DefaultValue(0)]
+        [Required]
         public double AdditionalCost { get; set; }
-        public string Description { get; set; }
+        public string? Description { get; set; }
     }
 }

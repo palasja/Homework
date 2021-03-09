@@ -8,7 +8,15 @@
 }
 else
 {
-    <button class="btn btn-light m-3" @onclick="NewContract">Добавить</button>
+    <div class="row">
+        <div class="col col-3">
+            <button class="btn btn-light m-3" @onclick="NewContract">Добавить</button>
+        </div>
+        <div class="col col-3">
+            <button class="btn btn-light m-3" @onclick="Calculate">Расчитать</button>
+        </div>
+    </div>
+
     <table class="table">
         <thead>
             <tr>
@@ -30,23 +38,33 @@ else
             }
         </tbody>
     </table>
-    <NewContract @ref="newContract" onCancel="onCancel" AreaId="@AreaId"></NewContract>
+    <NewContract @ref="newContract" onCancel="onCancelNewContract" AreaId="@AreaId"></NewContract>
+    <Calculate @ref="calculate" onCancel="onCancelCalculate" AreaId="@AreaId"></Calculate>
 }
 
 @code {
     [Parameter] public int AreaId { get; set; }
     NewContract newContract;
+    Calculate calculate;
     List<OrganizationDTO> Organizations;
     protected override async Task OnInitializedAsync()
     {
         Organizations = await organizationService.GetOrganizationOnAreaAsync((int)AreaId);
     }
-    void onCancel()
+    void onCancelNewContract()
     {
         newContract.Hide();
+    }
+    void onCancelCalculate()
+    {
+        calculate.Hide();
     }
     void NewContract()
     {
         newContract.Show();
+    }
+    void Calculate()
+    {
+        calculate.Show();
     }
 }

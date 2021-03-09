@@ -2,9 +2,7 @@
 @inject AreaServices AreaServices
 <div class="row">
     <div class="col col-3 m-3">
-        <NavLink class="nav-link bg-light" href="NewArea">
-            <span class="oi oi-plus" aria-hidden="true"></span> Добавить
-        </NavLink>
+        <button class="btn btn-light m-3" @onclick="AddArea">Добавить</button>
     </div>
 </div>
 @if (AreasOrgCount == null)
@@ -24,21 +22,26 @@ else
         <tbody>
             @foreach (var area in AreasOrgCount)
             {
-            <tr>
-                <td>
-                    <NavLink class="nav-link" href=@($"OrganizationsArea/{area.Area.Id}") Match="NavLinkMatch.All">
-                        @area.Area.FullName
-                </NavLink>
-            </td>
-            <td>@area.CountOrg</td>
-            <td><button class="btn btn-danger" @onclick="() => Remove(area.Area.Id)">Удалить</button></td>
-            </tr>
+                <tr>
+                    <td>
+                        <NavLink class="nav-link" href=@($"OrganizationsArea/{area.Area.Id}") Match="NavLinkMatch.All">
+                            @area.Area.FullName
+                        </NavLink>
+                    </td>
+                    <td>@area.CountOrg</td>
+                    <td>
+                        <button class="btn btn-danger" @onclick="() => Remove(area.Area.Id)">Удалить</button>
+                        <button class="btn btn-danger" @onclick="() => Remove(area.Area.Id)">Изменить</button>
+                    </td>
+                </tr>
+                <Confirm @ref="confirm" onCancel="onCancelDelete" onConfirm="onConfirm">
+                    <div class="text-danger">Удалить ?</div>
+                </Confirm>
+                <Area @ref="areaModal" onCancel="onCancelArea" />
             }
         </tbody>
     </table>
-    <Confirm @ref="confirm" onCancel="onCancel" onConfirm="onConfirm">
-        <div class="text-danger">Удалить ?</div>
-    </Confirm>
+
 }
 
 @code {
@@ -50,6 +53,7 @@ else
     }
     int deletedOrg;
     Confirm confirm;
+    Area areaModal;
     void Remove(int id)
     {
         deletedOrg = id;
@@ -62,12 +66,19 @@ else
         StateHasChanged();
 
     }
-
-    void onCancel()
+    void AddArea()
+    {
+        areaModal.Show();
+    }
+    void onCancelDelete()
     {
         confirm.Hide();
     }
 
+    void onCancelArea()
+    {
+        areaModal.Hide();
+    }
 
 }
 

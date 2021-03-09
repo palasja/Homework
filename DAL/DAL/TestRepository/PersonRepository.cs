@@ -19,7 +19,8 @@ namespace DAL.TestRepository
                 LastName = "Ковальчук",
                 Position = "Главный экономист",
                 Phone = "80232-23-56-84",
-                Email = "KovalchukAV@gomel.by"
+                Email = "KovalchukAV@gomel.by",
+                OrganizationId = 1
             });
             people.Add(new Person()
             {
@@ -29,7 +30,8 @@ namespace DAL.TestRepository
                 LastName = "Песоков",
                 Position = "Главный специалист",
                 Phone = "80236-34-52-68",
-                Email = "PesokovVI@npz.by"
+                Email = "PesokovVI@npz.by",
+                OrganizationId = 2
             });
             people.Add(new Person()
             {
@@ -37,7 +39,8 @@ namespace DAL.TestRepository
                 FirstName = "Василий",
                 MiddleName = "Иванович",
                 LastName = "Фонрос",
-                Phone = "802355-4-58-22"
+                Phone = "802355-4-58-22",
+                OrganizationId = 3
             });
             people.Add(new Person()
             {
@@ -46,7 +49,8 @@ namespace DAL.TestRepository
                 MiddleName = "Васильвна",
                 LastName = "Катонова",
                 Position = "Главный бухгалтер",
-                Phone = "802355-4-26-84"
+                Phone = "802355-4-26-84",
+                OrganizationId = 4
             });
             people.Add(new Person()
             {
@@ -56,6 +60,7 @@ namespace DAL.TestRepository
                 LastName = "Бульба",
                 Phone = "8017-45-78-32",
                 Email = "BulbaII@keramin.by",
+                OrganizationId = 5
             });
 
             return people;

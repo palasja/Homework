@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ContractContext))]
-    [Migration("20210306082708_changeInfo")]
-    partial class changeInfo
+    [Migration("20210309131003_Nullable")]
+    partial class Nullable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,6 +33,7 @@ namespace DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SimpleName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -73,7 +74,7 @@ namespace DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("EndDate")
+                    b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Number")
@@ -82,7 +83,7 @@ namespace DAL.Migrations
                     b.Property<int>("OrganizationId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("SatartDate")
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -95,34 +96,34 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 1,
-                            EndDate = new DateTime(2021, 3, 6, 11, 27, 8, 129, DateTimeKind.Local).AddTicks(5921),
+                            EndDate = new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(4772),
                             Number = "12-123/ВК6",
                             OrganizationId = 1,
-                            SatartDate = new DateTime(2021, 3, 6, 11, 27, 8, 127, DateTimeKind.Local).AddTicks(5707)
+                            StartDate = new DateTime(2021, 3, 9, 16, 10, 3, 39, DateTimeKind.Local).AddTicks(6660)
                         },
                         new
                         {
                             Id = 2,
-                            EndDate = new DateTime(2021, 3, 6, 11, 27, 8, 129, DateTimeKind.Local).AddTicks(7107),
+                            EndDate = new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5570),
                             Number = "12-1/ГК6",
                             OrganizationId = 2,
-                            SatartDate = new DateTime(2021, 3, 6, 11, 27, 8, 129, DateTimeKind.Local).AddTicks(7089)
+                            StartDate = new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5559)
                         },
                         new
                         {
                             Id = 3,
-                            EndDate = new DateTime(2021, 3, 6, 11, 27, 8, 129, DateTimeKind.Local).AddTicks(7128),
+                            EndDate = new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5585),
                             Number = "33-4/НК-6",
                             OrganizationId = 3,
-                            SatartDate = new DateTime(2021, 3, 6, 11, 27, 8, 129, DateTimeKind.Local).AddTicks(7127)
+                            StartDate = new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5584)
                         },
                         new
                         {
                             Id = 4,
-                            EndDate = new DateTime(2021, 3, 6, 11, 27, 8, 129, DateTimeKind.Local).AddTicks(7132),
+                            EndDate = new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5588),
                             Number = "4484/ОИ-6",
                             OrganizationId = 4,
-                            SatartDate = new DateTime(2021, 3, 6, 11, 27, 8, 129, DateTimeKind.Local).AddTicks(7130)
+                            StartDate = new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5587)
                         });
                 });
 
@@ -150,18 +151,12 @@ namespace DAL.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Smdo")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AreaId");
-
-                    b.HasIndex("PersonId")
-                        .IsUnique();
 
                     b.ToTable("Organizations");
 
@@ -174,7 +169,6 @@ namespace DAL.Migrations
                             Email = "GomelOblFu@gomel.by",
                             FullName = "Областное финансовое упрвление",
                             Name = "Обл ФУ",
-                            PersonId = 1,
                             Smdo = "Org1235"
                         },
                         new
@@ -185,7 +179,6 @@ namespace DAL.Migrations
                             Email = "NPZ@npz.by",
                             FullName = "Мозырский нефтеперерабатывающий завод",
                             Name = "НПЗ",
-                            PersonId = 2,
                             Smdo = "Org48693"
                         },
                         new
@@ -195,8 +188,7 @@ namespace DAL.Migrations
                             AreaId = 3,
                             Email = "Korovka@korovka.by",
                             FullName = "ОАО Красный Мозырянин",
-                            Name = "Красный мозырянин",
-                            PersonId = 3
+                            Name = "Красный мозырянин"
                         },
                         new
                         {
@@ -205,8 +197,7 @@ namespace DAL.Migrations
                             AreaId = 3,
                             Email = "Narovlya@roo.gomel.by",
                             FullName = "Районный отдел образования",
-                            Name = "Роо",
-                            PersonId = 4
+                            Name = "Роо"
                         },
                         new
                         {
@@ -215,8 +206,7 @@ namespace DAL.Migrations
                             AreaId = 4,
                             Email = "Keramin@keramin.by",
                             FullName = "ЗАО Керамин",
-                            Name = "Керамин",
-                            PersonId = 5
+                            Name = "Керамин"
                         });
                 });
 
@@ -245,14 +235,18 @@ namespace DAL.Migrations
                     b.Property<string>("MobilePhone")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("OrganizationId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Position")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OrganizationId");
 
                     b.ToTable("People");
 
@@ -264,6 +258,7 @@ namespace DAL.Migrations
                             FirstName = "Алёна",
                             LastName = "Ковальчук",
                             MiddleName = "Витальевна",
+                            OrganizationId = 1,
                             Phone = "80232-23-56-84",
                             Position = "Главный экономист"
                         },
@@ -274,6 +269,7 @@ namespace DAL.Migrations
                             FirstName = "Валерий",
                             LastName = "Песоков",
                             MiddleName = "Игнатьевич",
+                            OrganizationId = 2,
                             Phone = "80236-34-52-68",
                             Position = "Главный специалист"
                         },
@@ -283,6 +279,7 @@ namespace DAL.Migrations
                             FirstName = "Василий",
                             LastName = "Фонрос",
                             MiddleName = "Иванович",
+                            OrganizationId = 3,
                             Phone = "802355-4-58-22"
                         },
                         new
@@ -291,6 +288,7 @@ namespace DAL.Migrations
                             FirstName = "Анастасия",
                             LastName = "Катонова",
                             MiddleName = "Васильвна",
+                            OrganizationId = 4,
                             Phone = "802355-4-26-84",
                             Position = "Главный бухгалтер"
                         },
@@ -301,6 +299,7 @@ namespace DAL.Migrations
                             FirstName = "Ирина",
                             LastName = "Бульба",
                             MiddleName = "Игнатьевна",
+                            OrganizationId = 5,
                             Phone = "8017-45-78-32"
                         });
                 });
@@ -515,13 +514,18 @@ namespace DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DAL.ModelsDAL.Person", null)
-                        .WithOne("Organization")
-                        .HasForeignKey("DAL.ModelsDAL.Organization", "PersonId")
+                    b.Navigation("Area");
+                });
+
+            modelBuilder.Entity("DAL.ModelsDAL.Person", b =>
+                {
+                    b.HasOne("DAL.ModelsDAL.Organization", "Organization")
+                        .WithMany()
+                        .HasForeignKey("OrganizationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Area");
+                    b.Navigation("Organization");
                 });
 
             modelBuilder.Entity("DAL.ModelsDAL.Serivces.ServiceHardware", b =>
@@ -577,11 +581,6 @@ namespace DAL.Migrations
             modelBuilder.Entity("DAL.ModelsDAL.Organization", b =>
                 {
                     b.Navigation("Contracts");
-                });
-
-            modelBuilder.Entity("DAL.ModelsDAL.Person", b =>
-                {
-                    b.Navigation("Organization");
                 });
 #pragma warning restore 612, 618
         }

@@ -19,8 +19,7 @@ namespace DAL.TestRepository
                 Address = "ул Ленина 18",
                 Smdo = "Org1235",
                 Email = "GomelOblFu@gomel.by",
-                AreaId = 1,
-                PersonId = 1
+                AreaId = 1
             });
             organizations.Add(new Organization()
             {
@@ -30,8 +29,7 @@ namespace DAL.TestRepository
                 Address = "д. Лесовики 3",
                 Smdo = "Org48693",
                 Email = "NPZ@npz.by",
-                AreaId = 2,
-                PersonId = 2
+                AreaId = 2
             });
             organizations.Add(new Organization()
             {
@@ -40,8 +38,7 @@ namespace DAL.TestRepository
                 Name = "Красный мозырянин",
                 Address = "ул фабричная 1",
                 Email = "Korovka@korovka.by",
-                AreaId = 3,
-                PersonId = 3
+                AreaId = 3
             });
             organizations.Add(new Organization()
             {
@@ -50,8 +47,7 @@ namespace DAL.TestRepository
                 Name = "Роо",
                 Address = "ул Коммунистическая 4",
                 Email = "Narovlya@roo.gomel.by",
-                AreaId = 3,
-                PersonId = 4
+                AreaId = 3
             });
             organizations.Add(new Organization()
             {
@@ -60,8 +56,7 @@ namespace DAL.TestRepository
                 Name = "Керамин",
                 Address = "ул Заводская 85/4",
                 Email = "Keramin@keramin.by",
-                AreaId = 4,
-                PersonId = 5
+                AreaId = 4
             });
             return organizations;
         }

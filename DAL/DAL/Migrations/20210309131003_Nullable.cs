@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
-    public partial class CreateDatabaase : Migration
+    public partial class Nullable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,30 +14,11 @@ namespace DAL.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SimpleName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    SimpleName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Areas", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "People",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MiddleName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Position = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MobilePhone = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_People", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,7 +30,7 @@ namespace DAL.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MainCost = table.Column<double>(type: "float", nullable: false),
                     AdditionalCost = table.Column<double>(type: "float", nullable: false),
-                    Descrioption = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -67,8 +48,7 @@ namespace DAL.Migrations
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Smdo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AreaId = table.Column<int>(type: "int", nullable: false),
-                    PersonId = table.Column<int>(type: "int", nullable: false)
+                    AreaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -77,12 +57,6 @@ namespace DAL.Migrations
                         name: "FK_Organizations_Areas_AreaId",
                         column: x => x.AreaId,
                         principalTable: "Areas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Organizations_People_PersonId",
-                        column: x => x.PersonId,
-                        principalTable: "People",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -94,8 +68,8 @@ namespace DAL.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Number = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SatartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     OrganizationId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -103,6 +77,32 @@ namespace DAL.Migrations
                     table.PrimaryKey("PK_Contracts", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Contracts_Organizations_OrganizationId",
+                        column: x => x.OrganizationId,
+                        principalTable: "Organizations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "People",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MiddleName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Position = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MobilePhone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OrganizationId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_People", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_People_Organizations_OrganizationId",
                         column: x => x.OrganizationId,
                         principalTable: "Organizations",
                         principalColumn: "Id",
@@ -177,20 +177,8 @@ namespace DAL.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "People",
-                columns: new[] { "Id", "Email", "FirstName", "LastName", "MiddleName", "MobilePhone", "Phone", "Position" },
-                values: new object[,]
-                {
-                    { 1, "KovalchukAV@gomel.by", "Алёна", "Ковальчук", "Витальевна", null, "80232-23-56-84", "Главный экономист" },
-                    { 2, "PesokovVI@npz.by", "Валерий", "Песоков", "Игнатьевич", null, "80236-34-52-68", "Главный специалист" },
-                    { 3, null, "Василий", "Фонрос", "Иванович", null, "802355-4-58-22", null },
-                    { 4, null, "Анастасия", "Катонова", "Васильвна", null, "802355-4-26-84", "Главный бухгалтер" },
-                    { 5, "BulbaII@keramin.by", "Ирина", "Бульба", "Игнатьевна", null, "8017-45-78-32", null }
-                });
-
-            migrationBuilder.InsertData(
                 table: "ServiceInfo",
-                columns: new[] { "Id", "AdditionalCost", "Descrioption", "MainCost", "Name" },
+                columns: new[] { "Id", "AdditionalCost", "Description", "MainCost", "Name" },
                 values: new object[,]
                 {
                     { 1, 15.300000000000001, "Консультации, удалённая поддержка. При необходимости выезд к клиенту", 23.5, "Обслуживание КлиентТК" },
@@ -201,25 +189,37 @@ namespace DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "Organizations",
-                columns: new[] { "Id", "Address", "AreaId", "Email", "FullName", "Name", "PersonId", "Smdo" },
+                columns: new[] { "Id", "Address", "AreaId", "Email", "FullName", "Name", "Smdo" },
                 values: new object[,]
                 {
-                    { 1, "ул Ленина 18", 1, "GomelOblFu@gomel.by", "Областное финансовое упрвление", "Обл ФУ", 1, "Org1235" },
-                    { 2, "д. Лесовики 3", 2, "NPZ@npz.by", "Мозырский нефтеперерабатывающий завод", "НПЗ", 2, "Org48693" },
-                    { 3, "ул фабричная 1", 3, "Korovka@korovka.by", "ОАО Красный Мозырянин", "Красный мозырянин", 3, null },
-                    { 4, "ул Коммунистическая 4", 3, "Narovlya@roo.gomel.by", "Районный отдел образования", "Роо", 4, null },
-                    { 5, "ул Заводская 85/4", 4, "Keramin@keramin.by", "ЗАО Керамин", "Керамин", 5, null }
+                    { 1, "ул Ленина 18", 1, "GomelOblFu@gomel.by", "Областное финансовое упрвление", "Обл ФУ", "Org1235" },
+                    { 2, "д. Лесовики 3", 2, "NPZ@npz.by", "Мозырский нефтеперерабатывающий завод", "НПЗ", "Org48693" },
+                    { 3, "ул фабричная 1", 3, "Korovka@korovka.by", "ОАО Красный Мозырянин", "Красный мозырянин", null },
+                    { 4, "ул Коммунистическая 4", 3, "Narovlya@roo.gomel.by", "Районный отдел образования", "Роо", null },
+                    { 5, "ул Заводская 85/4", 4, "Keramin@keramin.by", "ЗАО Керамин", "Керамин", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Contracts",
-                columns: new[] { "Id", "EndDate", "Number", "OrganizationId", "SatartDate" },
+                columns: new[] { "Id", "EndDate", "Number", "OrganizationId", "StartDate" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2021, 3, 2, 16, 5, 27, 982, DateTimeKind.Local).AddTicks(5019), "12-123/ВК6", 1, new DateTime(2021, 3, 2, 16, 5, 27, 981, DateTimeKind.Local).AddTicks(5795) },
-                    { 2, new DateTime(2021, 3, 2, 16, 5, 27, 982, DateTimeKind.Local).AddTicks(5688), "12-1/ГК6", 2, new DateTime(2021, 3, 2, 16, 5, 27, 982, DateTimeKind.Local).AddTicks(5679) },
-                    { 3, new DateTime(2021, 3, 2, 16, 5, 27, 982, DateTimeKind.Local).AddTicks(5701), "33-4/НК-6", 3, new DateTime(2021, 3, 2, 16, 5, 27, 982, DateTimeKind.Local).AddTicks(5700) },
-                    { 4, new DateTime(2021, 3, 2, 16, 5, 27, 982, DateTimeKind.Local).AddTicks(5704), "4484/ОИ-6", 4, new DateTime(2021, 3, 2, 16, 5, 27, 982, DateTimeKind.Local).AddTicks(5703) }
+                    { 1, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(4772), "12-123/ВК6", 1, new DateTime(2021, 3, 9, 16, 10, 3, 39, DateTimeKind.Local).AddTicks(6660) },
+                    { 2, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5570), "12-1/ГК6", 2, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5559) },
+                    { 3, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5585), "33-4/НК-6", 3, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5584) },
+                    { 4, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5588), "4484/ОИ-6", 4, new DateTime(2021, 3, 9, 16, 10, 3, 40, DateTimeKind.Local).AddTicks(5587) }
+                });
+
+            migrationBuilder.InsertData(
+                table: "People",
+                columns: new[] { "Id", "Email", "FirstName", "LastName", "MiddleName", "MobilePhone", "OrganizationId", "Phone", "Position" },
+                values: new object[,]
+                {
+                    { 1, "KovalchukAV@gomel.by", "Алёна", "Ковальчук", "Витальевна", null, 1, "80232-23-56-84", "Главный экономист" },
+                    { 2, "PesokovVI@npz.by", "Валерий", "Песоков", "Игнатьевич", null, 2, "80236-34-52-68", "Главный специалист" },
+                    { 3, null, "Василий", "Фонрос", "Иванович", null, 3, "802355-4-58-22", null },
+                    { 4, null, "Анастасия", "Катонова", "Васильвна", null, 4, "802355-4-26-84", "Главный бухгалтер" },
+                    { 5, "BulbaII@keramin.by", "Ирина", "Бульба", "Игнатьевна", null, 5, "8017-45-78-32", null }
                 });
 
             migrationBuilder.InsertData(
@@ -227,10 +227,10 @@ namespace DAL.Migrations
                 columns: new[] { "Id", "ContractId", "ServerCount", "ServiceInfoId", "WorkplaceCount" },
                 values: new object[,]
                 {
-                    { 1, 1, 0, 1, 2 },
-                    { 2, 2, 0, 2, 5 },
-                    { 4, 3, 1, 2, 2 },
-                    { 3, 4, 1, 1, 5 }
+                    { 1, 1, 0, 3, 2 },
+                    { 2, 2, 0, 4, 5 },
+                    { 4, 3, 1, 4, 2 },
+                    { 3, 4, 1, 3, 5 }
                 });
 
             migrationBuilder.InsertData(
@@ -256,10 +256,9 @@ namespace DAL.Migrations
                 column: "AreaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Organizations_PersonId",
-                table: "Organizations",
-                column: "PersonId",
-                unique: true);
+                name: "IX_People_OrganizationId",
+                table: "People",
+                column: "OrganizationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ServiceHardwares_ContractId",
@@ -285,6 +284,9 @@ namespace DAL.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "People");
+
+            migrationBuilder.DropTable(
                 name: "ServiceHardwares");
 
             migrationBuilder.DropTable(
@@ -301,9 +303,6 @@ namespace DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Areas");
-
-            migrationBuilder.DropTable(
-                name: "People");
         }
     }
 }
