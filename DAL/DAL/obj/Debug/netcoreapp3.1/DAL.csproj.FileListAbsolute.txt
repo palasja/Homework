@@ -216,3 +216,4 @@ S:\C#\Task12\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.dll
 S:\C#\Task12\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
 S:\C#\Task12\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.genruntimeconfig.cache
 S:\C#\Task12\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.csprojAssemblyReference.cache
+D:\C#\Task12\DAL\DAL\obj\Debug\netcoreapp3.1\DAL.csprojAssemblyReference.cache

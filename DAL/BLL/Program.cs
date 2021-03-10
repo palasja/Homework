@@ -19,22 +19,19 @@ namespace BLL
 
         static void Main(string[] args)
         {
-            var startDate = DateTime.Parse("2019-06-01");
-            var endDate = DateTime.Parse("2020-12-31");
+            var a = new ContractContext();
+            var areas = a.Areas.Select(a => a.FullName);
+            foreach (var item in areas)
+            {
+                Console.WriteLine(item);
+            }
+/*            a.Dispose();*/
+           var areas1 = a.Areas.Select(a => a.SimpleName);
 
-            var cStart = DateTime.Now;
-            var cEnd = DateTime.Now;
-
-            Console.WriteLine((startDate < cStart && endDate < cStart));
-            Console.WriteLine((startDate > cEnd && endDate > cEnd));
-            Console.WriteLine("=================Convert=======================");
-            Console.WriteLine(!(startDate < cStart && endDate < cStart));
-            Console.WriteLine(!(startDate > cEnd && endDate > cEnd) || !(startDate > cEnd && endDate > cEnd));
-
-            Console.WriteLine(!(startDate < cStart && endDate < cStart));
-
-            /*(c => (!(startDate < cStart && endDate < cStart) || !(startDate > cEnd && endDate > cEnd)*/
-            /*            Console.WriteLine((endDate.Year - startDate.Year) *12 + (endDate.Month - startDate.Month));*/
+            foreach (var item in areas1)
+            {
+                Console.WriteLine(item);
+            }
         }
 
 

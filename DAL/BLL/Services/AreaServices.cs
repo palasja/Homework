@@ -1,31 +1,30 @@
 ﻿using AutoMapper;
+using BLL.Interfaces;
 using BLL.ModelsBLL;
 using BLL.ModelsDTO;
 using DAL;
 using DAL.Interfaces;
 using DAL.ModelsDAL;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    public class AreaServices
+    public class AreaServices : IAreaRepositiry
     {
-
-
+        public AreaServices() {
+        }
         public async Task<List<AreaToMenu>> GetAreasSimpleAsync()
         {
             List<AreaToMenu> areas = new List<AreaToMenu>();
 
             using (var context = new ContractContext())
             {
-                areas = context.Areas.Select(a => new AreaToMenu (){ Id = a.Id, SimpleName = a.SimpleName }).AsEnumerable().Select(a => new AreaToMenu (){ Id = a.Id, SimpleName = a.SimpleName }).ToList();
+                areas = await context.Areas.Select(a => new AreaToMenu (){ Id = a.Id, SimpleName = a.SimpleName }).OrderBy(a => a.SimpleName).ToListAsync();
             } 
-            return areas.OrderBy(a => a.SimpleName).ToList();
+            return areas;
         }
 
         public async Task<List<AreaCountOrg>> GetAreasForIndexAsync()
@@ -52,19 +51,20 @@ namespace BLL.Services
             var mapper = new Mapper(config);
             var area = mapper.Map<Area>(areaDTO);
 
-            using (IUnitOfWork uow = new UnitOfWork())
+            using (ContractContext context = new ContractContext())
             {
-                await uow.Areas.CreateAsync(area);
-                await uow.SaveAsync();
+                await context.Areas.AddAsync(area);
+                await context.SaveChangesAsync();
             }
         }
 
         public async Task DelAreaAsync(int id)
         {
-            using (IUnitOfWork uow = new UnitOfWork())
+            using (ContractContext context = new ContractContext())
             {
-                await uow.Areas.DeleteAsync(id);
-                await uow.SaveAsync();
+                var area = await context.Areas.FindAsync(id);
+                context.Areas.Remove(area);
+                await context.SaveChangesAsync();
             }
         }
 

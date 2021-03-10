@@ -21,8 +21,9 @@ namespace BLL.Services
         public async Task<List<OrganizationDTO>> GetOrganizationOnAreaAsync(int areaId )
         {
             List<OrganizationDTO> organization = new List<OrganizationDTO>();
-            using (IUnitOfWork uow = new UnitOfWork()) {
-                var AllOrganizations = await uow.Organizations.GetAllAsync();
+            using (ContractContext context = new ContractContext())
+            {
+                var AllOrganizations = await context.Organizations.Where(org => org.AreaId == areaId).OrderBy(org => org.FullName).ToListAsync();
                 var AreaOrganization = AllOrganizations.Where(org => org.AreaId == areaId).OrderBy(org => org.FullName).ToList();
                 var config = new MapperConfiguration(cfg => cfg.CreateMap<Organization, OrganizationDTO>());
                 var mapper = new Mapper(config);
