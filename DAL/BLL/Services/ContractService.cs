@@ -60,10 +60,10 @@ namespace BLL.Services
             contract.ServicesHardware = hardwares;
             contract.ServicesSoftware = softwares;
 
-            using (IUnitOfWork uow = new UnitOfWork())
+            using (ContractContext context = new ContractContext())
             {
-                await uow.Contracts.CreateAsync(contract);
-                await uow.SaveAsync();
+                await context.Contracts.AddAsync(contract);
+                await context.SaveChangesAsync();
             }
         }
 

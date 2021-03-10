@@ -1,3 +1,4 @@
+using BLL.Interfaces;
 using BLL.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
@@ -31,7 +32,7 @@ namespace Task12
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<ContractService>();
-            services.AddSingleton<AreaServices>();
+            services.AddScoped<AreaServices>();
             services.AddSingleton<OrganizationService>();
             services.AddSingleton<ServiceInfoService>();
             
