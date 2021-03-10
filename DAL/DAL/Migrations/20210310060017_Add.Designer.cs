@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ContractContext))]
-    [Migration("20210309171412_Add")]
+    [Migration("20210310060017_Add")]
     partial class Add
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -96,34 +96,34 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 1,
-                            EndDate = new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(909),
+                            EndDate = new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(1505),
                             Number = "12-123/ВК6",
                             OrganizationId = 1,
-                            StartDate = new DateTime(2021, 3, 9, 20, 14, 11, 353, DateTimeKind.Local).AddTicks(6706)
+                            StartDate = new DateTime(2021, 3, 10, 9, 0, 17, 412, DateTimeKind.Local).AddTicks(3452)
                         },
                         new
                         {
                             Id = 2,
-                            EndDate = new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2135),
+                            EndDate = new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2280),
                             Number = "12-1/ГК6",
                             OrganizationId = 2,
-                            StartDate = new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2121)
+                            StartDate = new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2270)
                         },
                         new
                         {
                             Id = 3,
-                            EndDate = new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2151),
+                            EndDate = new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2297),
                             Number = "33-4/НК-6",
                             OrganizationId = 3,
-                            StartDate = new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2149)
+                            StartDate = new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2296)
                         },
                         new
                         {
                             Id = 4,
-                            EndDate = new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2155),
+                            EndDate = new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2300),
                             Number = "4484/ОИ-6",
                             OrganizationId = 4,
-                            StartDate = new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2153)
+                            StartDate = new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2299)
                         });
                 });
 

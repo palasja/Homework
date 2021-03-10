@@ -204,10 +204,10 @@ namespace DAL.Migrations
                 columns: new[] { "Id", "EndDate", "Number", "OrganizationId", "StartDate" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(909), "12-123/ВК6", 1, new DateTime(2021, 3, 9, 20, 14, 11, 353, DateTimeKind.Local).AddTicks(6706) },
-                    { 2, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2135), "12-1/ГК6", 2, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2121) },
-                    { 3, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2151), "33-4/НК-6", 3, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2149) },
-                    { 4, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2155), "4484/ОИ-6", 4, new DateTime(2021, 3, 9, 20, 14, 11, 355, DateTimeKind.Local).AddTicks(2153) }
+                    { 1, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(1505), "12-123/ВК6", 1, new DateTime(2021, 3, 10, 9, 0, 17, 412, DateTimeKind.Local).AddTicks(3452) },
+                    { 2, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2280), "12-1/ГК6", 2, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2270) },
+                    { 3, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2297), "33-4/НК-6", 3, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2296) },
+                    { 4, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2300), "4484/ОИ-6", 4, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2299) }
                 });
 
             migrationBuilder.InsertData(

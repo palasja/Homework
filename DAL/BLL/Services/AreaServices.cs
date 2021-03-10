@@ -23,9 +23,9 @@ namespace BLL.Services
 
             using (var context = new ContractContext())
             {
-                areas = context.Areas.Select(a => new AreaToMenu (){ Id = a.Id, SimpleName = a.SimpleName }).AsEnumerable().Select(a => new AreaToMenu (){ Id = a.Id, SimpleName = a.SimpleName }).ToList();
+                areas = await context.Areas.Select(a => new AreaToMenu (){ Id = a.Id, SimpleName = a.SimpleName }).OrderBy(a => a.SimpleName).ToListAsync();
             } 
-            return areas.OrderBy(a => a.SimpleName).ToList();
+            return areas;
         }
 
         public async Task<List<AreaCountOrg>> GetAreasForIndexAsync()
