@@ -3,22 +3,32 @@
          <NavLink class="nav-link" Match=@NavLinkMatch.All href="/">
             <span class="oi oi-home" aria-hidden="true"></span> Районы
         </NavLink>
-        <ul class="nav flex-column">
-            @foreach (var area in Areas)
-            {
+         <ul class="nav flex-column">
+             @*            @foreach (var area in Areas)
+        {
 
-                <li class="nav-item px-3">
-                    <NavLink class="nav-link" Match=@NavLinkMatch.All href=@(@$"OrganizationsArea/{area.Id}") @onclick="(() => Folow(area.Id))">
-                        <span class="oi oi-home" aria-hidden="true"></span> @area.SimpleName
-                    </NavLink>
-                </li>
-            }
             <li class="nav-item px-3">
-                <NavLink class="nav-link" href="counter">
-                    <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                <NavLink class="nav-link" Match=@NavLinkMatch.All href=@(@$"OrganizationsArea/{area.Id}") @onclick="(() => Folow(area.Id))">
+                    <span class="oi oi-home" aria-hidden="true"></span> @area.SimpleName
                 </NavLink>
             </li>
-        </ul>
+        }*@
+             <li class="nav-item px-3">
+                 <NavLink class="nav-link" href="counter">
+                     <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                 </NavLink>
+             </li>
+             <li class="nav-item px-3">
+                 <NavLink class="nav-link" href="counter">
+                     <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                 </NavLink>
+             </li>
+             <li class="nav-item px-3">
+                 <NavLink class="nav-link" href="counter">
+                     <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                 </NavLink>
+             </li>
+         </ul>
 </div>
 
 @code {

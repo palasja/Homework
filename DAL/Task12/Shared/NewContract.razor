@@ -1,6 +1,6 @@
-﻿@inject OrganizationService organizationService
-@inject ServiceInfoService serviceInfoService
-@inject ContractService contractService
+﻿@inject UnitOfWork uow
+@*@inject ServiceInfoService serviceInfoService
+@inject ContractService contractService*@
 @if(displayConfirmation){
 <div class="modal-backdrop show"></div>
 
@@ -76,56 +76,6 @@
 
                         </div>
                     </div>
-
-                    @*<div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label for="lastName">Фамилия</label>
-                    <input type="text" class="form-control" aria-describedby="otherPlace" @bind="@person.LastName" id="lastName" placeholder="Иванов" required/>
-                    <small id="lastName" class="form-text text-muted">Фамилия контактного лица</small>
-                </div>
-
-                <div class="form-group">
-                    <label for="firstName">Имя</label>
-                    <input type="text" class="form-control" aria-describedby="firstName" @bind="@person.FirstName" id="firstName" placeholder="Иван" required/>
-                    <small id="firstName" class="form-text text-muted">Имя контактного лица</small>
-                </div>
-
-                <div class="form-group">
-                    <label for="midleName">Отчечство</label>
-                    <input type="text" class="form-control" aria-describedby="midleName" @bind="@person.MiddleName" id="midleName" placeholder="Ивановичч" required/>
-                    <small id="midleName" class="form-text text-muted">Отчество контактного лица</small>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label for="position">Должность</label>
-                    <input type="text" class="form-control" @bind="@person.Position" id="position" placeholder="Главны бухгалтер" />
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label for="workPhone">Рабочий теелфон</label>
-                    <input type="text" class="form-control" @bind="@person.Phone" id="lastName" placeholder="8-02355-4-22-22" />
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" @bind="@person.Email" id="email" placeholder="IvanovII@outlook.com" />
-                </div>
-
-                <div class="form-group">
-                    <label for="mobilePhone">Мобильный теелфон</label>
-                    <input type="text" class="form-control" @bind="@person.MobilePhone" id="mobilePhone" placeholder="8-029-111-11-11" />
-                </div>
-            </div>
-        </div>*@
                 </div>
             </div>
 
@@ -144,7 +94,6 @@
     bool displayConfirmation = false;
     [Parameter] public int AreaId { get; set; }
     [Parameter] public RenderFragment ChildContent { get; set; }
-    @*    [Parameter] public EventCallback onConfirm { get; set; }*@
 [Parameter] public EventCallback onCancel { get; set; }
 
 public void Hide() => displayConfirmation = false;
@@ -160,8 +109,8 @@ public ServiceHardwareDTO hardwaresTO = new ServiceHardwareDTO() { ServiceInfoId
 public ServiceHardwareDTO hardwaresUTO = new ServiceHardwareDTO() { ServiceInfoId = 4 };
 protected override async Task OnInitializedAsync()
 {
-    Organizations = await organizationService.GetOrganizationOnAreaAsync(AreaId);
-    ServicesInfo = await serviceInfoService.GetServicesInfoAsync();
+    Organizations = await uow.Organizations.GetOrganizationOnAreaAsync(AreaId);
+    ServicesInfo = await uow.ServicesInfo.GetServicesInfoAsync();
 }
 
 protected async Task Add()
@@ -185,7 +134,7 @@ protected async Task Add()
         softwares.Add(softwaresGRS);
     }
     contract.OrganizationId = organization.Id;
-    await contractService.AddContract(contract, hardwares, softwares);
+    await uow.Contracts.AddContract(contract, hardwares, softwares);
     Hide();
 }
 

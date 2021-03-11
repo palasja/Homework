@@ -1,7 +1,7 @@
 ﻿@page "/Contracts/"
 @page "/Contracts/{OrganizationId:int}/"
 
-@inject ContractService contractService
+@inject UnitOfWork uow
 
 @if (ContractsOrg == null)
 {
@@ -61,7 +61,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        ContractsOrg = await contractService.GetFullContractOnOrganization(OrganizationId);
+        ContractsOrg = await uow.Contracts.GetFullContractOnOrganization(OrganizationId);
 
     }
 

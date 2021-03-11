@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork_ : IUnitOfWork
     {
         private ContractContext db = new ContractContext();
 

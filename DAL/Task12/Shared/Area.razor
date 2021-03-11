@@ -1,73 +1,34 @@
-﻿@inject AreaServices areaServices
-@if (isChange)
+﻿@if (displayChange)
 {
-    @if (displayChange)
-    {
-        <div class="modal-backdrop show"></div>
+    <div class="modal-backdrop show"></div>
 
-        <div class="modal fade show" id="calculateModal" tabindex="-1" role="dialog"
-             aria-labelledby="confirmModal" aria-hidden="true" style="display:block">
+    <div class="modal fade show" id="calculateModal" tabindex="-1" role="dialog"
+         aria-labelledby="confirmModal" aria-hidden="true" style="display:block">
 
-            <div class="modal-dialog modal-lg" role="form">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">@Title</h5>
-                        <button type="button" @onclick="onCancel" class="close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-dialog modal-lg" role="form">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@Title</h5>
+                    <button type="button" @onclick="onCancel" class="close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="fullName">Полное название</label>
+                        <input type="text" class="form-control" aria-describedby="fullName" @bind="@area.FullName" id="fullName" placeholder="Наровлянсккий район" />
+                        <small id="fullName" class="form-text text-muted">Для отображения в справочнике</small>
                     </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="fullName">Полное название</label>
-                            <input type="text" class="form-control" aria-describedby="fullName" @bind="@area.FullName" id="fullName" placeholder="Наровлянсккий район" />
-                            <small id="fullName" class="form-text text-muted">Для отображения в справочнике</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="simpleName">Краткое название</label>
-                            <input type="text" class="form-control" aria-describedby="simpleName" @bind="@area.SimpleName" id="simpleName" placeholder="Наровля" />
-                            <small id="simpleName" class="form-text text-muted">Для отображения в меню</small>
-                        </div>
+                    <div class="form-group">
+                        <label for="simpleName">Краткое название</label>
+                        <input type="text" class="form-control" aria-describedby="simpleName" @bind="@area.SimpleName" id="simpleName" placeholder="Наровля" />
+                        <small id="simpleName" class="form-text text-muted">Для отображения в меню</small>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" @onclick="Update" class="btn btn-primary">Сохранить</button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" @onclick="onAction" class="btn btn-primary">Сохранить</button>
                 </div>
             </div>
         </div>
-    }
-}
-@if (!isChange)
-{
-    @if (displayChange)
-    {
-        <div class="modal-backdrop show"></div>
-
-        <div class="modal fade show" id="calculateModal" tabindex="-1" role="dialog"
-             aria-labelledby="confirmModal" aria-hidden="true" style="display:block">
-
-            <div class="modal-dialog modal-lg" role="form">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">@Title</h5>
-                        <button type="button" @onclick="onCancel" class="close"><span aria-hidden="true">&times;</span></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="fullName">Полное название</label>
-                            <input type="text" class="form-control" aria-describedby="fullName" @bind="@area.FullName" id="fullName" placeholder="Наровлянсккий район" />
-                            <small id="fullName" class="form-text text-muted">Для отображения в справочнике</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="simpleName">Краткое название</label>
-                            <input type="text" class="form-control" aria-describedby="simpleName" @bind="@area.SimpleName" id="simpleName" placeholder="Наровля" />
-                            <small id="simpleName" class="form-text text-muted">Для отображения в меню</small>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" @onclick="Save" class="btn btn-primary">Добавить</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
+    </div>
 }
 
 @code
@@ -75,10 +36,13 @@
     bool displayChange = false;
     [Parameter] public RenderFragment ChildContent { get; set; }
     [Parameter] public EventCallback onCancel { get; set; }
-    [Parameter] public int MyProperty { get; set; }
+    [Parameter] public EventCallback onAction { get; set; }
     [Parameter] public bool isChange { get; set; } = false;
     [Parameter] public AreaDTO area { get; set; } = new AreaDTO();
     [Parameter] public string Title { get; set; }
+
+    [Parameter] public string full { get; set; }
+    [Parameter] public string simple { get; set; }
 
     public void Hide()
     {
@@ -87,16 +51,4 @@
     }
 
     public void Show() => displayChange = true;
-
-    public async Task Save()
-    {
-        await areaServices.AddAreaAsync(area);
-        Hide();
-    }
-
-    public async Task Update()
-    {
-        await areaServices.UpdateAreaAsync(area);
-        Hide();
-    }
 }

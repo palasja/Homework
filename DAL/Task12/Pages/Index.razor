@@ -1,5 +1,5 @@
 ﻿@page "/"
-@inject AreaServices AreaServices
+@inject UnitOfWork uow
 <div class="row">
     <div class="col col-3 m-3">
         <button class="btn btn-light m-3" @onclick="() => areaAdd.Show()">Добавить</button>
@@ -37,8 +37,8 @@ else
                 <Confirm @ref="confirm" onCancel="() => confirm.Hide()" onConfirm="onConfirm">
                     <div class="text-danger">Удалить @area.Area.FullName ?</div>
                 </Confirm>
-                <Area @ref="areaChange" Title="Изменить" onCancel="() => areaChange.Hide()" isChange="true" area="changedArea"/>
-                <Area @ref="areaAdd" Title="Добавить" onCancel="() => areaAdd.Hide()" />
+                <Area @ref="areaChange" Title="Изменить" onCancel="() => areaChange.Hide()" onAction="Update" isChange="true" area="changedArea" />
+                <Area @ref="areaAdd" Title="Добавить" onCancel="() => areaAdd.Hide()" onAction="Save"/>
             }
         </tbody>
     </table>
@@ -50,7 +50,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        AreasOrgCount = await AreaServices.GetAreasForIndexAsync();
+        AreasOrgCount = await uow.Areas.GetAreasForIndexAsync();
     }
     int deletedOrg;
     Confirm confirm;
@@ -65,11 +65,10 @@ else
     async void onConfirm()
     {
         confirm.Hide();
-        await AreaServices.DelAreaAsync(deletedOrg);
+        await uow.Areas.DelAreaAsync(deletedOrg);
         StateHasChanged();
 
     }
-
 
     AreaDTO changedArea;
     void onChangeArea(AreaDTO area)
@@ -78,6 +77,17 @@ else
         areaChange.Show();
     }
 
+    public async Task Save()
+    {
+        await uow.Areas.AddAreaAsync(areaAdd.area);
+        areaAdd.Hide();
+    }
+
+    public async Task Update()
+    {
+        await uow.Areas.UpdateAreaAsync(changedArea);
+        areaChange.Hide();
+    }
 }
 
 

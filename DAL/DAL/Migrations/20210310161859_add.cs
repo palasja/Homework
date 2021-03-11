@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
-    public partial class Add : Migration
+    public partial class add : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -204,10 +204,10 @@ namespace DAL.Migrations
                 columns: new[] { "Id", "EndDate", "Number", "OrganizationId", "StartDate" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(1505), "12-123/ВК6", 1, new DateTime(2021, 3, 10, 9, 0, 17, 412, DateTimeKind.Local).AddTicks(3452) },
-                    { 2, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2280), "12-1/ГК6", 2, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2270) },
-                    { 3, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2297), "33-4/НК-6", 3, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2296) },
-                    { 4, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2300), "4484/ОИ-6", 4, new DateTime(2021, 3, 10, 9, 0, 17, 413, DateTimeKind.Local).AddTicks(2299) }
+                    { 1, new DateTime(2021, 3, 10, 19, 18, 58, 412, DateTimeKind.Local).AddTicks(4248), "12-123/ВК6", 1, new DateTime(2021, 3, 10, 19, 18, 58, 411, DateTimeKind.Local).AddTicks(725) },
+                    { 2, new DateTime(2021, 3, 10, 19, 18, 58, 412, DateTimeKind.Local).AddTicks(5465), "12-1/ГК6", 2, new DateTime(2021, 3, 10, 19, 18, 58, 412, DateTimeKind.Local).AddTicks(5451) },
+                    { 3, new DateTime(2021, 3, 10, 19, 18, 58, 412, DateTimeKind.Local).AddTicks(5485), "33-4/НК-6", 3, new DateTime(2021, 3, 10, 19, 18, 58, 412, DateTimeKind.Local).AddTicks(5483) },
+                    { 4, new DateTime(2021, 3, 10, 19, 18, 58, 412, DateTimeKind.Local).AddTicks(5489), "4484/ОИ-6", 4, new DateTime(2021, 3, 10, 19, 18, 58, 412, DateTimeKind.Local).AddTicks(5488) }
                 });
 
             migrationBuilder.InsertData(

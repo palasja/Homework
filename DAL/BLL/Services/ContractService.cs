@@ -1,25 +1,29 @@
 ﻿using AutoMapper;
+using BLL.Interfaces;
 using BLL.ModelsBLL;
 using BLL.ModelsDTO;
 using BLL.ModelsDTO.Serivces;
 using DAL;
-using DAL.Interfaces;
 using DAL.ModelsDAL;
 using DAL.ModelsDAL.Serivces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    public class ContractService
+    public class ContractService : IContractsService
     {
+        ContractContext context;
+        public ContractService(ContractContext context)
+        {
+            this.context = context;
+        }
         public async Task<List<ContractInfo>> GetFullContractOnOrganization(int organizationId)
         {
-            List<ContractInfo> fuiInfo = new List<ContractInfo>();
+            List<ContractInfo> fullInfo = new List<ContractInfo>();
             using (var context = new ContractContext())
             {
                 var orgContracts = await context.Contracts.Where(con => con.OrganizationId == organizationId).ToListAsync();
@@ -28,7 +32,7 @@ namespace BLL.Services
                 {
                     var hardwareTask = await HardwaresForContractAsync(contract);
                     var softwareTask = await SoftwaresForContractAsynk(contract);
-                    fuiInfo.Add(
+                    fullInfo.Add(
                         new ContractInfo() {
                             Id = contract.Id,
                             Number = contract.Number,
@@ -41,7 +45,7 @@ namespace BLL.Services
                     );
                 }
             }
-            return fuiInfo;
+            return fullInfo;
         }
 
         public async Task AddContract(ContractDTO contractDTO, List<ServiceHardwareDTO> hardwaresDTO, List<ServiceSoftwareDTO> softwaresDTO)
@@ -76,7 +80,7 @@ namespace BLL.Services
             return fullCost;
         }
 
-        public async Task<List<Contract>> FilterContract(int areaId, DateTime startFilter, DateTime endFilter)
+        private async Task<List<Contract>> FilterContract(int areaId, DateTime startFilter, DateTime endFilter)
         {
             var contracts = new List<Contract>();
             using (ContractContext context = new ContractContext())

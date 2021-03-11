@@ -1,5 +1,5 @@
 ﻿@inherits LayoutComponentBase
-@inject AreaServices areaServices
+@inject UnitOfWork uow
 <div class="sidebar">
     <AreaMenu Areas="areas" />
 </div>
@@ -19,6 +19,6 @@
     List<AreaToMenu> areas = new List<AreaToMenu>();
     protected override async Task OnInitializedAsync()
     {
-        areas = await areaServices.GetAreasSimpleAsync();
+        areas = await uow.Areas.GetAreasSimpleAsync();
     }
 }

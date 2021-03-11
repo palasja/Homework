@@ -1,4 +1,4 @@
-﻿@inject ContractService contractService
+﻿@inject UnitOfWork uow
 @if (displayConfirmation)
 {
     <div class="modal-backdrop show"></div>
@@ -43,7 +43,7 @@
 
     public async Task onConfirm()
     {
-        cost = await contractService.GetCostOnPeriod(AreaId, startFilter, endFilter);
+        cost = await uow.Contracts.GetCostOnPeriod(AreaId, startFilter, endFilter);
 
     }
 
