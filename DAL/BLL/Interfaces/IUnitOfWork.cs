@@ -10,5 +10,6 @@ namespace BLL.Interfaces
         public IOrganizationRepository Organizations { get;  }
         public IContractsService Contracts { get; }
         public IServiceInfoRepository ServicesInfo { get; }
+        public IPersonServiceRepository People { get; }
     }
 }

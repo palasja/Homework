@@ -9,12 +9,12 @@ namespace BLL.Services
     {
         private ContractContext db = new ContractContext();
 
-        private AreaServices areaRepository;
-        private ContractService contractRepository;
-        private OrganizationService organizationRepository;
-        private ServiceInfoService serviceInfoRepository;
-        /*        private PersonRepository personRepository;
-                private ServiceHardwareRepository serviceHardwareRepository;
+        private IAreaRepositiry areaRepository;
+        private IContractsService contractRepository;
+        private IOrganizationRepository organizationRepository;
+        private IServiceInfoRepository serviceInfoRepository;
+        private IPersonServiceRepository personRepository;
+        /*        private ServiceHardwareRepository serviceHardwareRepository;
         private ServiceSoftwareRepository serviceSoftwareRepository;*/
 
 
@@ -53,6 +53,16 @@ namespace BLL.Services
                 if (serviceInfoRepository == null)
                     serviceInfoRepository = new ServiceInfoService(db);
                 return serviceInfoRepository;
+            }
+        }
+
+        public IPersonServiceRepository People
+        {
+            get
+            {
+                if (personRepository == null)
+                    personRepository = new PersonService(db);
+                return personRepository;
             }
         }
 

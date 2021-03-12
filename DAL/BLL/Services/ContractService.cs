@@ -21,6 +21,11 @@ namespace BLL.Services
         {
             this.context = context;
         }
+
+        public ContractService()
+        {
+        }
+
         public async Task<List<ContractInfo>> GetFullContractOnOrganization(int organizationId)
         {
             List<ContractInfo> fullInfo = new List<ContractInfo>();
@@ -75,8 +80,8 @@ namespace BLL.Services
         {
             double fullCost = 0;
             var contracts = await FilterContract(areaId, startFilter, endFilter);
-            fullCost += GetCostHardware(contracts);
-            fullCost += GetCostSoftware(contracts);
+            fullCost += GetCostHardware(contracts,startFilter, endFilter);
+            fullCost += GetCostSoftware(contracts, startFilter, endFilter);
             return fullCost;
         }
 
@@ -94,36 +99,47 @@ namespace BLL.Services
             return filtredContracts;
         }
 
-        private double GetCostSoftware(List<Contract> contracts)
+        public double GetCostSoftware(List<Contract> contracts, DateTime startFilter, DateTime endFilter)
         {
             double sum = 0;
             foreach (var contract in contracts)
             {
+                var month = GetMonthActionContract(contract, startFilter, endFilter);
                 foreach (var software in contract.ServicesSoftware)
                 {
                     var serviceInfo = software.ServiceInfo;
 
-                    sum += software.MainPlaceCount * serviceInfo.MainCost;
-                    sum += software.AdditionalPlaceCount * serviceInfo.AdditionalCost;
+                    sum += software.MainPlaceCount * serviceInfo.MainCost * month;
+                    sum += software.AdditionalPlaceCount * serviceInfo.AdditionalCost * month;
                 }
             }
             return sum;
         }
 
-        private double GetCostHardware(List<Contract> contracts)
+        public double GetCostHardware(List<Contract> contracts, DateTime startFilter, DateTime endFilter)
         {
             double sum = 0;
             foreach (var contract in contracts)
             {
+                var month = GetMonthActionContract(contract, startFilter, endFilter);
                 foreach (var software in contract.ServicesHardware)
                 {
                     var serviceInfo = software.ServiceInfo;
 
-                    sum += software.ServerCount * serviceInfo.MainCost;
-                    sum += software.WorkplaceCount * serviceInfo.AdditionalCost;
+                    sum += software.ServerCount * serviceInfo.MainCost * month;
+                    sum += software.WorkplaceCount * serviceInfo.AdditionalCost * month;
                 }
             }
             return sum;
+        }
+        public int GetMonthActionContract(Contract contract, DateTime startFilter, DateTime endFilter)
+        {
+            DateTime minEnd = endFilter;
+            DateTime maxStart = startFilter;
+            if (DateTime.Compare(contract.StartDate, startFilter) > 0) maxStart = contract.StartDate;
+            if (DateTime.Compare(contract.EndDate ?? endFilter, endFilter) < 0) minEnd = contract.EndDate ?? endFilter;
+            int month = (maxStart.Year - minEnd.Year) * 12 + maxStart.Month - minEnd.Month;
+            return month;
         }
         private async Task<List<HardwareForInfo>> HardwaresForContractAsync(Contract contract)
         {
